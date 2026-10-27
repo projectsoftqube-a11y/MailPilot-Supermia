@@ -131,9 +131,9 @@ export function Footer({ home = true }: { home?: boolean }) {
           <span className="foot__copy">
             <span>© 2026 MailPilot AI. All rights reserved.</span>
             <span className="foot__credit">
-              Designed &amp; developed by{" "}
+              Design &amp; Develop by{" "}
               <a href={links.softqube} target="_blank" rel="noopener">
-                Softqube Technologies
+                Softqube Technologies LLC
               </a>
             </span>
           </span>
