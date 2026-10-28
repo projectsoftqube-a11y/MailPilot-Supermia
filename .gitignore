@@ -9,10 +9,14 @@ legacy-v*/
 tmp-*.png
 
 # Environment & OS
-.env
-.env.*
 *.log
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# env files: every type (.env, .env.local, .env.development, .env.production, .env.example, *.env, .envrc)
+.env
+.env.*
+*.env
+.envrc
