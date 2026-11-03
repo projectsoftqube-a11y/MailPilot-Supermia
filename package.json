@@ -7,10 +7,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/check-blog.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build": "node scripts/optimize-photos.mjs && node scripts/check-blog.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "check": "node scripts/visual-check.mjs",
     "check:blog": "node scripts/check-blog.mjs",
+    "photos": "node scripts/optimize-photos.mjs",
     "blog:schedule": "node scripts/blog-due.mjs --list"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "@types/three": "^0.186.0",
     "@vitejs/plugin-react": "^6.1.2",
     "playwright": "^1.64.0",
+    "sharp": "^0.35.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.4"
   }

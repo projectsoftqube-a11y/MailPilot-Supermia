@@ -3,14 +3,50 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "mail-pilot-nu.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "mail-pilot-nu.vercel.app"
+        }
+      ],
       "destination": "https://mailpilot.supermia.ai/:path*",
       "permanent": true
     },
-    { "source": "/use-cases/:path*", "destination": "/solutions/:path*", "permanent": true },
-    { "source": "/features/automated-follow-ups/", "destination": "/features/email-follow-up-automation/", "permanent": true },
-    { "source": "/features/automated-follow-ups", "destination": "/features/email-follow-up-automation/", "permanent": true },
-    { "source": "/features/inbox-analytics/", "destination": "/features/inbox-performance-overview/", "permanent": true },
-    { "source": "/features/inbox-analytics", "destination": "/features/inbox-performance-overview/", "permanent": true }
+    {
+      "source": "/use-cases/:path*",
+      "destination": "/solutions/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/features/automated-follow-ups/",
+      "destination": "/features/email-follow-up-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/features/automated-follow-ups",
+      "destination": "/features/email-follow-up-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/features/inbox-analytics/",
+      "destination": "/features/inbox-performance-overview/",
+      "permanent": true
+    },
+    {
+      "source": "/features/inbox-analytics",
+      "destination": "/features/inbox-performance-overview/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }

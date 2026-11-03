@@ -32,9 +32,9 @@ export function Title({ title, script, as: Tag = "h2", className = "h2" }: { tit
   );
 }
 
-export function Shot({ photo, className = "", eager }: { photo: PhotoRef; className?: string; eager?: boolean }) {
+export function Shot({ photo, className = "", eager, sizes }: { photo: PhotoRef; className?: string; eager?: boolean; sizes?: string }) {
   return (
-    <Photo name={photo.name} fallbackName={photo.fallback} alt={photo.alt} position={photo.position} eager={eager} className={`pg-shot ${className}`}>
+    <Photo name={photo.name} fallbackName={photo.fallback} alt={photo.alt} position={photo.position} eager={eager} sizes={sizes} className={`pg-shot ${className}`}>
       <img className="pg-shot__mark" src="/mailpilot-mark-light.png" alt="" width={391} height={313} />
     </Photo>
   );
@@ -319,7 +319,7 @@ function Statement({ s }: { s: Extract<Section, { type: "statement" }> }) {
   return (
     <section className="pg-statement panel-wrap" id={s.id}>
       <div className="panel pg-statement__panel">
-        <Shot photo={s.photo} className="pg-statement__bg pg-parallax" />
+        <Shot photo={s.photo} className="pg-statement__bg pg-parallax" sizes="100vw" />
         <div className="shell pg-statement__inner">
           <Title title={s.text} script={s.script} className="h2 pg-statement__text" />
         </div>

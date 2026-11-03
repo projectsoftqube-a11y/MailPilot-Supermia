@@ -47,7 +47,7 @@ function useBlogMotion(root: React.RefObject<HTMLDivElement | null>) {
 function ArticleCard({ p, featured }: { p: PostCard; featured?: boolean }) {
   return (
     <a className={`bl-card ${featured ? "bl-card--featured" : ""}`} href={postPath(p.slug)}>
-      <Shot photo={p.hero} className="bl-card__photo" />
+      <Shot photo={p.hero} className="bl-card__photo" sizes={featured ? "(max-width: 960px) 100vw, 55vw" : "(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 33vw"} />
       <span className="bl-card__body">
         <span className="bl-card__meta">
           <span className="chip chip--bronze">{p.category}</span>
@@ -160,7 +160,7 @@ export function BlogIndex({ cards }: { cards: PostCard[] }) {
                 {posts.slice(0, 3).map((p, i) => (
                   <a key={p.slug} className={`bl-stamp bl-stamp--${i}`} href={postPath(p.slug)} aria-label={`${p.title} ${p.script ?? ""}`}>
                     <span className="bl-stamp__paper">
-                      <Shot photo={p.hero} className="bl-stamp__photo" eager={i === 0} />
+                      <Shot photo={p.hero} className="bl-stamp__photo" eager={i === 0} sizes="(max-width: 960px) 60vw, 340px" />
                       <span className="bl-stamp__cap">
                         <em>{p.category}</em>
                         <strong>{p.title}</strong>
@@ -366,7 +366,7 @@ function BlockView({ b }: { b: Block }) {
     case "figure":
       return (
         <figure className="bl-figure" data-reveal>
-          <Shot photo={b.photo} className="pg-parallax" />
+          <Shot photo={b.photo} className="pg-parallax" sizes="(max-width: 1100px) 100vw, 760px" />
           <figcaption>{b.caption}</figcaption>
         </figure>
       );

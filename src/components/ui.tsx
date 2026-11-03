@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { photoUrl } from "../lib/photos";
+import { photoSet, photoUrl } from "../lib/photos";
 import "./ui.css";
 
 type PhotoProps = {
@@ -11,17 +11,28 @@ type PhotoProps = {
   className?: string;
   position?: string;
   eager?: boolean;
+  /** How wide the photo is shown (the `sizes` attribute), so the browser downloads the smallest copy that's sharp. */
+  sizes?: string;
   /** Rendered when no image exists — a designed placeholder, never a broken image. */
   children?: ReactNode;
 };
 
-export function Photo({ name, fallbackName, alt = "", className = "", position, eager, children }: PhotoProps) {
-  const url = photoUrl(name) ?? (fallbackName ? photoUrl(fallbackName) : undefined);
+export function Photo({ name, fallbackName, alt = "", className = "", position, eager, sizes = "(max-width: 960px) 100vw, 50vw", children }: PhotoProps) {
+  const set = photoSet(name) ?? (fallbackName ? photoSet(fallbackName) : undefined);
   const style: CSSProperties | undefined = position ? { objectPosition: position } : undefined;
   return (
-    <div className={`photo ${url ? "" : "photo--empty"} ${className}`}>
-      {url ? (
-        <img src={url} alt={alt} loading={eager ? "eager" : "lazy"} decoding="async" style={style} />
+    <div className={`photo ${set ? "" : "photo--empty"} ${className}`}>
+      {set ? (
+        <img
+          src={set.src}
+          srcSet={set.srcSet}
+          sizes={sizes}
+          alt={alt}
+          loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "high" : undefined}
+          decoding="async"
+          style={style}
+        />
       ) : (
         <div className="photo__fallback" aria-hidden="true">
           {children}

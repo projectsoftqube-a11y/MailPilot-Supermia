@@ -127,3 +127,9 @@ Source: Drive folder "MailPilot AI by SuperMIA: SEO, AEO and GEO Content Package
 - **Open questions for SuperMIA (Q1–Q26 in the Drive fact sheet), most relevant:** CASA tier/date (Q2); stored data, scopes and AI providers (Q3); credit price (Q6); multiple inboxes (Q9); daily briefing and calendar (Q11); company credit Softqube vs Botfinity (Q14); Outlook data coverage (Q23); deletion window 30 vs 90 days (Q24).
 - **Known differences kept at the site owner's request:** no visible breadcrumbs (BreadcrumbList JSON-LD kept); header shows Blog at top level instead of a Resources dropdown; Sign in goes to `https://app.mailpilot.supermia.ai/`.
 - **Decided (owner, 3 Nov 2026): keep the Morning Briefing, calendar features and multiple-inbox claims.** The package said to wait for SuperMIA (Q9, Q11), but all three exist in the app code (`D:\All Portal\MailPilot-Frontend`). Still ask SuperMIA to confirm them before any paid marketing push.
+
+### Images and page speed
+- Masters live in `src/assets/photos/` (any size, jpg/png/webp). `scripts/optimize-photos.mjs` (first step of `npm run build`, or `npm run photos`) writes WebP copies at 480/800/1200/1600px to `src/assets/photos/_w/`. **Only the copies ship**; masters never reach visitors. Commit `_w/` after adding photos.
+- `<Photo>` renders `srcset` + `sizes`, so the browser downloads the smallest sharp copy. Pass `sizes` when a photo is shown small (cards, menus). `eager` photos get `fetchpriority="high"` (use it for the first visible image only).
+- `vercel.json` caches `/assets/*` for a year (`immutable`); file names change whenever a file changes.
+- Measured 3 Nov 2026: first-load image weight cut 5–25× (e.g. blog list on mobile 219 KB → 18 KB).

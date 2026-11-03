@@ -220,7 +220,7 @@ export function Nav({ current }: { current?: string }) {
             </div>
           </div>
           <a className="mega__promo" href="/how-it-works/">
-            <Photo name="pg-how-hero" fallbackName="seal-hand" className="mega__photo" />
+            <Photo name="pg-how-hero" fallbackName="seal-hand" className="mega__photo" sizes="300px" />
             <span className="mega__promo-copy">
               <em>new here?</em>
               <strong>See how MailPilot works in four steps</strong>
@@ -260,7 +260,7 @@ export function Nav({ current }: { current?: string }) {
             </div>
           </div>
           <a className="mega__promo" href="/security/">
-            <Photo name="pg-security-hero" fallbackName="letter-sealed" className="mega__photo" />
+            <Photo name="pg-security-hero" fallbackName="letter-sealed" className="mega__photo" sizes="300px" />
             <span className="mega__promo-copy">
               <em>before you connect</em>
               <strong>How we keep your inbox private</strong>
