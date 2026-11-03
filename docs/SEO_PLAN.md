@@ -16,14 +16,14 @@ One primary keyword per page. No two pages share a primary keyword.
 | `/` | MailPilot AI / AI email assistant | Mail Pilot, AI email assistant for Gmail and Outlook | Brand, commercial | SoftwareApplication, FAQPage, Organization |
 | `/features/` | AI email assistant features | AI inbox management, email automation software | Commercial | WebPage, FAQPage, Breadcrumb |
 | `/features/ai-email-writer/` | AI email writer | AI email reply generator, AI that writes emails in my style, AI email response generator | Commercial | WebPage (+ Q&A), FAQPage |
-| `/features/automated-follow-ups/` | automated follow up emails | email follow up automation, follow up email after no response, auto follow up Gmail | Commercial | WebPage, FAQPage |
+| `/features/email-follow-up-automation/` | automated follow up emails | email follow up automation, follow up email after no response, auto follow up Gmail | Commercial | WebPage, FAQPage |
 | `/features/relationship-intelligence/` | email relationship tracking | relationship intelligence, CRM alternative for email | Commercial | WebPage, FAQPage |
-| `/features/inbox-analytics/` | email analytics | email response time tracking, inbox analytics | Commercial | WebPage, FAQPage |
+| `/features/inbox-performance-overview/` | email analytics | email response time tracking, inbox analytics | Commercial | WebPage, FAQPage |
 | `/features/ai-email-summary/` | AI email summary | daily email briefing, summarize my emails, inbox summary AI | Commercial | WebPage, FAQPage |
 | `/features/ai-calendar-assistant/` | AI scheduling assistant | AI calendar assistant for Gmail, meeting conflict detection | Commercial | WebPage, FAQPage |
-| `/use-cases/sales/` | AI email assistant for sales | sales email follow up automation, email assistant for SDRs | Commercial | WebPage, FAQPage |
-| `/use-cases/executives/` | AI email assistant for executives | AI executive assistant email, email assistant for CEOs | Commercial | WebPage, FAQPage |
-| `/use-cases/consultants/` | AI email assistant for consultants | email management for freelancers, client follow up emails | Commercial | WebPage, FAQPage |
+| `/solutions/sales/` | AI email assistant for sales | sales email follow up automation, email assistant for SDRs | Commercial | WebPage, FAQPage |
+| `/solutions/executives/` | AI email assistant for executives | AI executive assistant email, email assistant for CEOs | Commercial | WebPage, FAQPage |
+| `/solutions/consultants/` | AI email assistant for consultants | email management for freelancers, client follow up emails | Commercial | WebPage, FAQPage |
 | `/integrations/gmail/` | AI email assistant for Gmail | Gmail AI assistant, AI for Gmail | Commercial | WebPage, FAQPage |
 | `/integrations/outlook/` | AI email assistant for Outlook | Outlook AI assistant, Office 365 email automation | Commercial | WebPage, FAQPage |
 | `/how-it-works/` | how AI email assistant works | set up AI email assistant, email agent | Informational | WebPage, HowTo, FAQPage |

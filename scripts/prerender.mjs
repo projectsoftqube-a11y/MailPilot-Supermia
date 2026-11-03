@@ -15,7 +15,7 @@ if (!SITE) throw new Error("prerender: no canonical link in dist/index.html");
 const description = home.match(/<meta\s+name="description"\s+content="([^"]+)"/)[1];
 
 const NAME = "MailPilot AI";
-const ALIASES = ["MailPilot", "Mail Pilot", "Mail Pilot AI"];
+const ALIASES = ["MailPilot AI by SuperMIA", "MailPilot", "Mail Pilot", "Mail Pilot AI"];
 const { company } = ssr;
 const [, city, region, postalCode] = company.address[1].match(/^(.+?), ([A-Z]{2}) (\d{5})/);
 const today = new Date().toISOString().slice(0, 10);
@@ -66,7 +66,8 @@ const crumbs = (list) => ({
   itemListElement: list.map(([name, path], i) => ({ "@type": "ListItem", position: i + 1, name, item: abs(path) })),
 });
 
-const homeGraph = [org, website, app, faqNode(`${SITE}/#faq`, ssr.faqs)];
+// FAQPage markup lives on /faq/ only (SEO package rule); other pages show their FAQs without it
+const homeGraph = [org, website, app];
 
 const legalGraph = (doc) => {
   const d = ssr.legal[doc];
@@ -122,7 +123,6 @@ const pageGraph = (p) => {
     },
     crumbs([[NAME, "/"], ...(parent ? [[parent.nav.label === "All features" ? "Features" : parent.nav.label, `/${parent.slug}/`]] : []), [p.nav.label, path]]),
   ];
-  if (p.slug !== "faq" && allFaqs.length) graph.push(faqNode(`${url}#faq`, allFaqs));
   const steps = p.sections.find((s) => s.type === "steps");
   if (p.slug === "how-it-works" && steps) {
     graph.push({
@@ -226,7 +226,6 @@ const postGraph = (p, body) => {
       ["Blog", "/blog/"],
       [`${p.title} ${p.script ?? ""}`.trim(), `/blog/${p.slug}/`],
     ]),
-    ...(p.faqs.length ? [faqNode(`${url}#faq`, p.faqs)] : []),
   ];
 };
 
@@ -282,9 +281,9 @@ const sitemapXml = (docs) =>
 
 const group = (g) => ssr.pages.filter((p) => p.group === g);
 const line = (p) => `- [${p.nav.label}](${abs(`/${p.slug}/`)}): ${p.seo.description}`;
-const llmsTxt = (livePosts) => `# MailPilot AI
+const llmsTxt = (livePosts) => `# MailPilot AI by SuperMIA
 
-> MailPilot AI is an AI email assistant (email agent) by SuperMIA for Gmail and Outlook. It drafts replies in the user's own voice, sends follow-ups when people don't reply, scores every work relationship from email history, and briefs the user on their inbox each morning. Nothing is sent without the user's approval, and email always goes from the user's own address.
+> MailPilot AI by SuperMIA is an AI email assistant (email agent) by SuperMIA for Gmail and Outlook. It drafts replies in the user's own voice, sends follow-ups when people don't reply, scores every work relationship from email history, and briefs the user on their inbox each morning. Nothing is sent without the user's approval, and email always goes from the user's own address.
 
 Key facts:
 - Made by: SuperMIA (operated by ${company.name}, ${company.address.join(", ")}). Contact: ${company.email}

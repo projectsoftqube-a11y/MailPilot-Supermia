@@ -184,7 +184,7 @@ export const declineMeetingPost: BlogPost = {
     },
     {
       t: "p",
-      text: "With clients, lead with the alternative. Offer two specific times before you explain why the original doesn't work, and keep the reason short. If you're moving a regular catch-up, our [client check-in email guide](/blog/client-check-in-email/) has wording that keeps things warm. Consultants juggling many clients can also see [how MailPilot supports client work](/use-cases/consultants/).",
+      text: "With clients, lead with the alternative. Offer two specific times before you explain why the original doesn't work, and keep the reason short. If you're moving a regular catch-up, our [client check-in email guide](/blog/client-check-in-email/) has wording that keeps things warm. Consultants juggling many clients can also see [how MailPilot supports client work](/solutions/consultants/).",
     },
     { t: "h2", id: "mistakes", text: "Common mistakes when declining a meeting" },
     {
@@ -336,7 +336,7 @@ export const fyxerAlternativesPost: BlogPost = {
     {
       t: "ul",
       items: [
-        "**Follow-ups:** if nobody replies inside your window, it drafts a follow-up from the original thread. In Draft mode you approve each one; in Semi-automatic mode follow-ups send on their own while reply drafts still wait for you. See [automated follow-ups](/features/automated-follow-ups/).",
+        "**Follow-ups:** if nobody replies inside your window, it drafts a follow-up from the original thread. In Draft mode you approve each one; in Semi-automatic mode follow-ups send on their own while reply drafts still wait for you. See [automated follow-ups](/features/email-follow-up-automation/).",
         "**Relationships:** a profile for each contact built from your email history, with a relationship score. See [relationship intelligence](/features/relationship-intelligence/).",
         "**Calendar:** catches meeting clashes against Google Calendar and asks how to reply. Our guide on [declining a meeting politely](/blog/decline-meeting-politely/) shows the kind of reply it drafts.",
         "**Inboxes:** connect Gmail with Google sign-in ([MailPilot for Gmail](/integrations/gmail/)) and see several connected inboxes together in an All Inboxes view.",
@@ -468,7 +468,7 @@ export const meetingRequestPost: BlogPost = {
   seo: {
     title: "Meeting Request Email: How to Ask (8 Templates That Work)",
     description:
-      "How to write a meeting request email that gets a yes: subject lines, a five-part structure, follow-up timing and 8 templates for clients, bosses and cold leads.",
+      "How to write a meeting request email that gets a yes: subject lines, a five-part structure, follow-up timing and 8 templates for clients, bosses and new contacts.",
     keywords: ["meeting request email", "how to ask for a meeting by email", "meeting request email template", "email to schedule a meeting"],
   },
   keyword: "meeting request email",
@@ -535,7 +535,7 @@ export const meetingRequestPost: BlogPost = {
         ["Internal and quick", "15 minutes on the onboarding checklist?"],
         ["Client", "Planning call for [project] phase 2"],
         ["Manager", "Time to discuss my goals for next quarter"],
-        ["Cold outreach", "Idea for [Company]'s [specific area]"],
+        ["First contact", "Idea for [Company]'s [specific area]"],
         ["Referral", "[Mutual contact] suggested we talk"],
         ["Follow-up", "Re: 20 minutes on [topic]"],
       ],
@@ -565,7 +565,7 @@ export const meetingRequestPost: BlogPost = {
     },
     {
       t: "template",
-      label: "4. Cold meeting request",
+      label: "4. Meeting request to someone new",
       when: "No prior relationship",
       subject: "Idea for [Company]'s [area]",
       body: "Hi [Name],\n\nI'm [your name], [role] at [company]. I noticed [specific, recent thing about their company], and we've helped [similar company] with [problem].\n\nWould you be open to a 20-minute call to see if it's relevant? [Day] or [day] next week could work on my side.\n\nIf you're not the right person, a pointer to who is would be much appreciated.\n\nBest,\n[Your name]",
@@ -619,7 +619,7 @@ export const meetingRequestPost: BlogPost = {
     },
     {
       t: "p",
-      text: "Our guide to [following up after no response](/blog/follow-up-email-after-no-response/) covers spacing and wording, and for prospects there's our [cold email follow-up guide](/blog/cold-email-follow-up/). Once the meeting happens, a short [thank-you email after the meeting](/blog/thank-you-email-after-meeting/) keeps the momentum going.",
+      text: "Our guide to [following up after no response](/blog/follow-up-email-after-no-response/) covers spacing and wording, and for live deals there's our [sales follow-up guide](/blog/sales-follow-up-email/). Once the meeting happens, a short [thank-you email after the meeting](/blog/thank-you-email-after-meeting/) keeps the momentum going.",
     },
     { t: "h2", id: "mistakes", text: "Common mistakes when asking for a meeting" },
     {
@@ -645,7 +645,7 @@ export const meetingRequestPost: BlogPost = {
     },
     {
       t: "p",
-      text: "It drafts in [your own writing style](/features/ai-email-writer/), respects the working hours and buffer time you set, and waits for your approval before anything goes out. If your request goes unanswered, it can draft the follow-up for you ([automated follow-ups](/features/automated-follow-ups/)). For salespeople booking demos, see [MailPilot for sales](/use-cases/sales/). New accounts start with free credits ([pricing](/pricing/)).",
+      text: "It drafts in [your own writing style](/features/ai-email-writer/), respects the working hours and buffer time you set, and waits for your approval before anything goes out. If your request goes unanswered, it can draft the follow-up for you ([automated follow-ups](/features/email-follow-up-automation/)). For salespeople booking demos, see [MailPilot for sales](/solutions/sales/). New accounts start with free credits ([pricing](/pricing/)).",
     },
     {
       t: "cta",

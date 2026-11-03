@@ -103,7 +103,7 @@ export const voicePost: BlogPost = {
     },
     {
       t: "p",
-      text: "[MailPilot AI's email writer](/features/ai-email-writer/) works this way. You set up a Persona once in about 10 to 15 minutes, by describing your style or pasting sample emails. Every reply is then drafted against it, with the full thread as context, and waits for your approval. You can add instructions for a specific contact or thread, and the same Persona writes your [follow-ups](/features/automated-follow-ups/). See [how setup works](/how-it-works/). New accounts get free starter credits, so you can test your Persona on real email before deciding ([pricing](/pricing/)). MailPilot also remembers how you write to each person, alongside their [relationship history](/features/relationship-intelligence/).",
+      text: "[MailPilot AI's email writer](/features/ai-email-writer/) works this way. You set up a Persona once in about 10 to 15 minutes, by describing your style or pasting sample emails. Every reply is then drafted against it, with the full thread as context, and waits for your approval. You can add instructions for a specific contact or thread, and the same Persona writes your [follow-ups](/features/email-follow-up-automation/). See [how setup works](/how-it-works/). New accounts get free starter credits, so you can test your Persona on real email before deciding ([pricing](/pricing/)). MailPilot also remembers how you write to each person, alongside their [relationship history](/features/relationship-intelligence/).",
     },
     {
       t: "figure",
@@ -262,13 +262,13 @@ export const statsPost: BlogPost = {
     { t: "h2", id: "what-to-do", text: "What can you do with these numbers?" },
     {
       t: "p",
-      text: "Measure your own. Most of that time goes on a few repeat jobs: writing replies, chasing people who haven't answered and working out what matters. An assistant that [drafts replies in your voice](/features/ai-email-writer/) and handles the [follow-ups](/blog/follow-up-email-after-no-response/) attacks the biggest of them. Then look at your own numbers: your response times, unanswered threads and the hours you spend in the inbox tell you more than any average. MailPilot's [inbox analytics](/features/inbox-analytics/) show this for your own mailbox, and its [morning briefing](/features/ai-email-summary/) turns the day's email into a short list. For leaders, see [how executives use MailPilot](/use-cases/executives/), or read our [routine for managing email overload](/blog/how-to-manage-email-overload/). You can try it free with starter credits ([pricing](/pricing/)).",
+      text: "Measure your own. Most of that time goes on a few repeat jobs: writing replies, chasing people who haven't answered and working out what matters. An assistant that [drafts replies in your voice](/features/ai-email-writer/) and handles the [follow-ups](/blog/follow-up-email-after-no-response/) attacks the biggest of them. Then look at your own numbers: your response times, unanswered threads and the hours you spend in the inbox tell you more than any average. MailPilot's [inbox analytics](/features/inbox-performance-overview/) show this for your own mailbox, and its [morning briefing](/features/ai-email-summary/) turns the day's email into a short list. For leaders, see [how executives use MailPilot](/solutions/executives/), or read our [routine for managing email overload](/blog/how-to-manage-email-overload/). You can try it free with starter credits ([pricing](/pricing/)).",
     },
     {
       t: "cta",
       title: "See your own email numbers",
       text: "MailPilot shows your response time, reply rate and unanswered threads, then drafts the replies. Start free.",
-      href: "/features/inbox-analytics/",
+      href: "/features/inbox-performance-overview/",
       label: "See inbox analytics",
     },
   ],
@@ -305,7 +305,7 @@ export const statsPost: BlogPost = {
     { label: "The Radicati Group, Email Statistics Report 2024–2028, executive summary", url: "https://radicati.com/wp/wp-content/uploads/2024/10/Email-Statistics-Report-2024-2028-Executive-Summary.pdf" },
     { label: "Kushlev & Dunn, \"Checking email less frequently reduces stress\", Computers in Human Behavior (2015)", url: "https://www.interruptions.net/literature/Kushlev-ComputHumBehav15.pdf" },
   ],
-  supports: ["use-cases/executives", "features/inbox-analytics"],
+  supports: ["solutions/executives", "features/inbox-performance-overview"],
   related: ["how-to-manage-email-overload", "follow-up-email-after-no-response", "best-ai-email-assistants"],
 };
 
@@ -361,7 +361,7 @@ export const overloadPost: BlogPost = {
     },
     {
       t: "p",
-      text: "If three or more sound familiar, you're not alone. Microsoft's 2025 research found the average worker receives 117 emails a day and is interrupted roughly every two minutes. Our [email statistics roundup](/blog/email-statistics-time-spent/) has the full picture, and it's often worse for leaders: see [how executives use MailPilot](/use-cases/executives/) to cut the volume.",
+      text: "If three or more sound familiar, you're not alone. Microsoft's 2025 research found the average worker receives 117 emails a day and is interrupted roughly every two minutes. Our [email statistics roundup](/blog/email-statistics-time-spent/) has the full picture, and it's often worse for leaders: see [how executives use MailPilot](/solutions/executives/) to cut the volume.",
     },
     { t: "h2", id: "batch", text: "Why check email in batches instead of all day?" },
     {
@@ -423,7 +423,7 @@ export const overloadPost: BlogPost = {
       t: "ul",
       items: [
         "**Open threads:** anything still waiting on you, and anything waiting on others.",
-        "**Follow-ups due:** proposals and requests that haven't had a reply. Our guide covers [how to write a follow-up after no response](/blog/follow-up-email-after-no-response/), or let [automated follow-ups](/features/automated-follow-ups/) draft them for you.",
+        "**Follow-ups due:** proposals and requests that haven't had a reply. Our guide covers [how to write a follow-up after no response](/blog/follow-up-email-after-no-response/), or let [automated follow-ups](/features/email-follow-up-automation/) draft them for you.",
         "**Cooling contacts:** important people you haven't spoken to in a while.",
         "**Unsubscribes:** five minutes removing newsletters you never read.",
       ],
@@ -474,6 +474,6 @@ export const overloadPost: BlogPost = {
     { label: "Microsoft WorkLab, \"Breaking down the infinite workday\" (Work Trend Index, June 2025)", url: "https://www.microsoft.com/en-us/worklab/work-trend-index/breaking-down-infinite-workday" },
     { label: "Gmail Help: Create rules to filter your emails", url: "https://support.google.com/mail/answer/6579" },
   ],
-  supports: ["features/ai-email-summary", "use-cases/executives"],
+  supports: ["features/ai-email-summary", "solutions/executives"],
   related: ["email-statistics-time-spent", "follow-up-email-after-no-response", "ai-write-emails-in-your-voice"],
 };

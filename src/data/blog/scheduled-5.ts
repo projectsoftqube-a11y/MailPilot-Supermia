@@ -204,7 +204,7 @@ export const angryClient: BlogPost = {
     },
     {
       t: "p",
-      text: "Then look for the pattern. Was this a one-off, or the third tense thread with this client this quarter? Clients rarely send one angry email out of nowhere. Usually there were slower replies, missed details and quiet weeks first. That's why [consultants and agencies](/use-cases/consultants/) watch the health of the whole relationship, not just single threads.",
+      text: "Then look for the pattern. Was this a one-off, or the third tense thread with this client this quarter? Clients rarely send one angry email out of nowhere. Usually there were slower replies, missed details and quiet weeks first. That's why [consultants and agencies](/solutions/consultants/) watch the health of the whole relationship, not just single threads.",
     },
     { t: "h2", id: "mistakes", text: "Common mistakes when replying to an angry client" },
     {
@@ -230,7 +230,7 @@ export const angryClient: BlogPost = {
     },
     {
       t: "p",
-      text: "Its [relationship intelligence](/features/relationship-intelligence/) scores each relationship from recency, frequency and response rate, which helps you spot a client cooling off before the angry email arrives. See how it fits [client work for consultants](/use-cases/consultants/), or read how [AI can write emails in your voice](/blog/ai-write-emails-in-your-voice/).",
+      text: "Its [relationship intelligence](/features/relationship-intelligence/) scores each relationship from recency, frequency and response rate, which helps you spot a client cooling off before the angry email arrives. See how it fits [client work for consultants](/solutions/consultants/), or read how [AI can write emails in your voice](/blog/ai-write-emails-in-your-voice/).",
     },
     {
       t: "cta",
@@ -263,7 +263,7 @@ export const angryClient: BlogPost = {
     },
   ],
   sources: [{ label: "Gmail Help: Undo sending your email (cancellation period of 5 to 30 seconds)", url: "https://support.google.com/mail/answer/2819488" }],
-  supports: ["features/ai-email-writer", "use-cases/consultants"],
+  supports: ["features/ai-email-writer", "solutions/consultants"],
   related: ["follow-up-email-after-no-response", "ai-write-emails-in-your-voice", "professional-email-subject-lines"],
 };
 
@@ -618,8 +618,8 @@ export const demoFollowUp: BlogPost = {
     {
       t: "callout",
       tone: "note",
-      title: "Not the same as a no-reply or cold follow-up",
-      text: "These templates assume you've already had a live conversation. For an email that simply got no answer, use our guide to the [follow-up email after no response](/blog/follow-up-email-after-no-response/). For prospects who haven't met you yet, see our [cold email follow-up](/blog/cold-email-follow-up/) templates.",
+      title: "Not the same as a no-reply follow-up",
+      text: "These templates assume you've already had a live conversation. For an email that simply got no answer, use our guide to the [follow-up email after no response](/blog/follow-up-email-after-no-response/). For deals that stall at other stages, see our [sales follow-up](/blog/sales-follow-up-email/) templates.",
     },
     {
       t: "figure",
@@ -664,7 +664,7 @@ export const demoFollowUp: BlogPost = {
     { t: "h2", id: "mailpilot", text: "How MailPilot AI keeps post-demo follow-ups on time" },
     {
       t: "p",
-      text: "The writing is the easy part. Remembering to send follow-up number three on day ten, for every deal, is where things slip. [MailPilot AI's automated follow-ups](/features/automated-follow-ups/) watch the emails you send, and if no reply arrives inside your window, it drafts a follow-up from the original thread in your own voice.",
+      text: "The writing is the easy part. Remembering to send follow-up number three on day ten, for every deal, is where things slip. [MailPilot AI's automated follow-ups](/features/email-follow-up-automation/) watch the emails you send, and if no reply arrives inside your window, it drafts a follow-up from the original thread in your own voice.",
     },
     {
       t: "p",
@@ -672,13 +672,13 @@ export const demoFollowUp: BlogPost = {
     },
     {
       t: "p",
-      text: "Before the next call, the [calendar assistant](/features/ai-calendar-assistant/) finds the email thread and agenda behind each Google Calendar meeting, and [relationship scores](/features/relationship-intelligence/) show which prospects are going quiet. See how it fits a pipeline on the [sales page](/use-cases/sales/), and check [pricing](/pricing/) for the free starter credits.",
+      text: "Before the next call, the [calendar assistant](/features/ai-calendar-assistant/) finds the email thread and agenda behind each Google Calendar meeting, and [relationship scores](/features/relationship-intelligence/) show which prospects are going quiet. See how it fits a pipeline on the [sales page](/solutions/sales/), and check [pricing](/pricing/) for the free starter credits.",
     },
     {
       t: "cta",
       title: "Keep every demo warm",
       text: "MailPilot drafts follow-ups in your voice when prospects go quiet, within limits you set per contact. Free starter credits, no credit card.",
-      href: "/use-cases/sales/",
+      href: "/solutions/sales/",
       label: "See MailPilot for sales",
     },
   ],
@@ -705,7 +705,7 @@ export const demoFollowUp: BlogPost = {
     },
   ],
   sources: [],
-  supports: ["use-cases/sales", "features/automated-follow-ups"],
+  supports: ["solutions/sales", "features/email-follow-up-automation"],
   related: ["follow-up-email-after-no-response", "respond-to-angry-client-email", "best-ai-email-assistants"],
 };
 
@@ -876,7 +876,7 @@ export const geminiReview: BlogPost = {
     },
     {
       t: "p",
-      text: "You don't have to choose. [MailPilot works alongside Gmail](/integrations/gmail/), so you can keep Gemini for quick polish and summaries while MailPilot drafts replies, runs [automated follow-ups](/features/automated-follow-ups/) and sends a [morning briefing](/features/ai-email-summary/). It's CASA certified, never uses your Gmail data for ads or to train general AI models, and reply drafts always wait for your approval. The [full feature list](/features/) and [pricing](/pricing/) show what's included.",
+      text: "You don't have to choose. [MailPilot works alongside Gmail](/integrations/gmail/), so you can keep Gemini for quick polish and summaries while MailPilot drafts replies, runs [automated follow-ups](/features/email-follow-up-automation/) and sends a [morning briefing](/features/ai-email-summary/). It's CASA certified, never uses your Gmail data for ads or to train general AI models, and reply drafts always wait for your approval. The [full feature list](/features/) and [pricing](/pricing/) show what's included.",
     },
     { t: "h2", id: "mistakes", text: "Common mistakes when judging Gmail's AI" },
     {
@@ -1111,7 +1111,7 @@ export const subjectLines: BlogPost = {
       rows: [
         ["Referral", "[Mutual contact] suggested I reach out"],
         ["Double intro", "Intro: [Name] and [Name], [shared topic]"],
-        ["Cold outreach", "Question about [their recent project]"],
+        ["First contact", "Question about [their recent project]"],
         ["After an event", "Great meeting you at [event]"],
         ["Advice", "Ten minutes of advice on [topic]?"],
         ["Partnership", "Partnership idea: [company] and [company]"],

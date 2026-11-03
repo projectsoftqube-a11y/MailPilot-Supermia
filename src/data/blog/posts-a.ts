@@ -161,17 +161,17 @@ export const followUpNoResponse: BlogPost = {
     { t: "h2", id: "automate", text: "How to automate follow-ups without sounding automated" },
     {
       t: "p",
-      text: "Remembering every thread is the hard part, not the writing. Basic reminder tools tell you when to follow up; an email agent can also draft the follow-up for you. [MailPilot AI](/features/automated-follow-ups/) watches the emails you send, and if no reply arrives inside your window, it drafts a short follow-up from the original thread in [your own writing style](/features/ai-email-writer/).",
+      text: "Remembering every thread is the hard part, not the writing. Basic reminder tools tell you when to follow up; an email agent can also draft the follow-up for you. [MailPilot AI](/features/email-follow-up-automation/) watches the emails you send, and if no reply arrives inside your window, it drafts a short follow-up from the original thread in [your own writing style](/features/ai-email-writer/).",
     },
     {
       t: "p",
-      text: "You stay in control: approve each one in Draft mode, or let follow-ups send on their own in Semi-automatic mode, with per-contact limits. Pending follow-ups are dropped the moment the other person replies. Sales teams use it to keep every proposal warm; see [how it works for sales](/use-cases/sales/). Setup takes about 15 minutes ([how it works](/how-it-works/)), and new accounts start with free credits ([pricing](/pricing/)).",
+      text: "You stay in control: approve each one in Draft mode, or let follow-ups send on their own in Semi-automatic mode, with per-contact limits. Pending follow-ups are dropped the moment the other person replies. Sales teams use it to keep every proposal warm; see [how it works for sales](/solutions/sales/). Setup takes about 15 minutes ([how it works](/how-it-works/)), and new accounts start with free credits ([pricing](/pricing/)).",
     },
     {
       t: "cta",
       title: "Never forget a follow-up again",
       text: "MailPilot drafts follow-ups from the original thread, in your voice, when nobody replies. Free starter credits, no credit card.",
-      href: "/features/automated-follow-ups/",
+      href: "/features/email-follow-up-automation/",
       label: "See automated follow-ups",
     },
   ],
@@ -198,7 +198,7 @@ export const followUpNoResponse: BlogPost = {
     },
   ],
   sources: [{ label: "Microsoft WorkLab, \"Breaking down the infinite workday\" (Work Trend Index, June 2025)", url: "https://www.microsoft.com/en-us/worklab/work-trend-index/breaking-down-infinite-workday" }],
-  supports: ["features/automated-follow-ups", "use-cases/sales"],
+  supports: ["features/email-follow-up-automation", "solutions/sales"],
   related: ["how-to-manage-email-overload", "ai-write-emails-in-your-voice", "best-ai-email-assistants"],
 };
 
@@ -276,7 +276,7 @@ export const bestAssistants: BlogPost = {
       t: "ul",
       items: [
         "**Best for:** salespeople, founders and consultants whose work depends on replies and follow-ups.",
-        "**Stands out:** [automated follow-ups](/features/automated-follow-ups/), [relationship scores](/features/relationship-intelligence/) and calendar-aware replies that catch meeting clashes.",
+        "**Stands out:** [automated follow-ups](/features/email-follow-up-automation/), [relationship scores](/features/relationship-intelligence/) and calendar-aware replies that catch meeting clashes.",
         "**Control:** nothing sends without approval in Draft mode; Semi-automatic mode lets follow-ups send on their own.",
         "**Price:** 200 credits a month through the SuperMIA Agent Marketplace, with free starter credits and no credit card ([pricing](/pricing/)).",
       ],

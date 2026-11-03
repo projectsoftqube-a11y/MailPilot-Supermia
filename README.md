@@ -44,8 +44,8 @@ scripts/
 
 16 content pages plus an HTML sitemap, all driven by data in `src/data/pages/` and rendered by `src/components/page/Page.tsx`:
 
-- Features: `/features/`, `/features/ai-email-writer/`, `/features/automated-follow-ups/`, `/features/relationship-intelligence/`, `/features/inbox-analytics/`, `/features/ai-email-summary/`, `/features/ai-calendar-assistant/`
-- Solutions: `/use-cases/sales/`, `/use-cases/executives/`, `/use-cases/consultants/`, `/integrations/gmail/`, `/integrations/outlook/`
+- Features: `/features/`, `/features/ai-email-writer/`, `/features/email-follow-up-automation/`, `/features/relationship-intelligence/`, `/features/inbox-performance-overview/`, `/features/ai-email-summary/`, `/features/ai-calendar-assistant/`
+- Solutions: `/solutions/sales/`, `/solutions/executives/`, `/solutions/consultants/`, `/integrations/gmail/`, `/integrations/outlook/`
 - Company: `/how-it-works/`, `/pricing/`, `/security/`, `/faq/`, `/sitemap/`
 
 Add a page by adding an entry to `src/data/pages/` and registering it in `index.ts`; its HTML file, `<head>`, structured data and sitemap entry are generated. See [CLAUDE.md](CLAUDE.md) for the rules, [docs/SEO_PLAN.md](docs/SEO_PLAN.md) for the keyword map and [IMAGE_PROMPTS.md](IMAGE_PROMPTS.md) for the 30 image slots.
@@ -60,7 +60,7 @@ Hero (folding letter) → The 3.1-hour day → Product player → Five folders �
 
 `npm run build` type-checks, builds the client, then pre-renders every page to static HTML (`src/entry-server.tsx` and `scripts/prerender.mjs`), so search engines and link previews see the full content without running JavaScript. The same step writes the structured data, `sitemap.xml` and `robots.txt`.
 
-The public address lives in one place, `SITE_URL` in `vite.config.ts` (currently `https://mail-pilot-nu.vercel.app`). When the site moves to its own domain, set a `SITE_URL` environment variable on the host (for Vercel: Project Settings, Environment Variables) and redeploy; canonical links, social cards, structured data and the sitemap all follow.
+The public address lives in one place, `SITE_URL` in `vite.config.ts` (currently `https://mailpilot.supermia.ai`). To change it, set a `SITE_URL` environment variable on the host and redeploy; canonical links, social cards, structured data and the sitemap all follow. `vercel.json` 301-redirects the old `mail-pilot-nu.vercel.app` address to it.
 
 After each domain change, submit `/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 

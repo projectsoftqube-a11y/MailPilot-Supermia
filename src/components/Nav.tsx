@@ -13,7 +13,7 @@ type Item = { label: string; href: string; menu?: MenuId; match: (slug: string) 
 
 const items: Item[] = [
   { label: "Features", href: "/features/", menu: "features", match: (s) => s === "features" || s.startsWith("features/") },
-  { label: "Solutions", href: "/use-cases/sales/", menu: "solutions", match: (s) => s.startsWith("use-cases/") || s.startsWith("integrations/") },
+  { label: "Solutions", href: "/solutions/sales/", menu: "solutions", match: (s) => s.startsWith("solutions/") || s.startsWith("integrations/") },
   { label: "How it works", href: "/how-it-works/", match: (s) => s === "how-it-works" },
   { label: "Pricing", href: "/pricing/", match: (s) => s === "pricing" },
   { label: "Blog", href: "/blog/", match: (s) => s === "blog" || s.startsWith("blog/") },

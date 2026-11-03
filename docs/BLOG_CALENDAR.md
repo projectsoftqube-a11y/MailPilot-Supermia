@@ -19,29 +19,29 @@
 | # | Publish | Slug (`/blog/…/`) | Primary keyword | Intent | Supports | Image id | Batch |
 |---|---|---|---|---|---|---|---|
 | 1 | 2026-11-10 | how-to-end-an-email | how to end an email | Info / templates | features/ai-email-writer | `end` | 1 |
-| 2 | 2026-11-17 | thank-you-email-after-meeting | thank you email after meeting | Info / templates | features/automated-follow-ups, use-cases/sales | `thanks` | 1 |
-| 3 | 2026-11-24 | polite-reminder-email | polite reminder email | Info / templates | features/automated-follow-ups | `reminder` | 1 |
+| 2 | 2026-11-17 | thank-you-email-after-meeting | thank you email after meeting | Info / templates | features/email-follow-up-automation, solutions/sales | `thanks` | 1 |
+| 3 | 2026-11-24 | polite-reminder-email | polite reminder email | Info / templates | features/email-follow-up-automation | `reminder` | 1 |
 | 4 | 2026-12-01 | out-of-office-message-examples | out of office message examples | Info / seasonal | features/ai-email-summary | `ooo` | 1 |
-| 5 | 2026-12-08 | client-check-in-email | client check in email | Info / templates | features/relationship-intelligence, use-cases/consultants | `checkin` | 1 |
+| 5 | 2026-12-08 | client-check-in-email | client check in email | Info / templates | features/relationship-intelligence, solutions/consultants | `checkin` | 1 |
 | 6 | 2026-12-15 | catch-up-on-email-after-vacation | how to catch up on email after vacation | Info / seasonal | features/ai-email-summary | `catchup` | 1 |
 | 7 | 2026-12-22 | email-etiquette-rules | email etiquette rules | Info | features/ai-email-writer | `etiquette` | 2 |
 | 8 | 2026-12-29 | inbox-zero-method | inbox zero method | Info / New Year | features/ai-email-summary, how-it-works | `inboxzero` | 2 |
 | 9 | 2027-01-05 | how-to-write-a-professional-email | how to write a professional email | Info / templates | features/ai-email-writer | `professional` | 2 |
-| 10 | 2027-01-12 | cold-email-follow-up | cold email follow up | Info / sales Q1 | use-cases/sales, features/automated-follow-ups | `cold` | 2 |
-| 11 | 2027-01-19 | email-response-time | average email response time | Info / benchmark | features/inbox-analytics | `response` | 2 |
+| 10 | 2027-01-12 | sales-follow-up-email | sales follow up email | Info / sales Q1 | solutions/sales, features/email-follow-up-automation | `sales` | 2 |
+| 11 | 2027-01-19 | email-response-time | average email response time | Info / benchmark | features/inbox-performance-overview | `response` | 2 |
 | 12 | 2027-01-26 | decline-meeting-politely | how to decline a meeting politely | Info / templates | features/ai-calendar-assistant | `decline` | 3 |
 | 13 | 2027-02-02 | fyxer-alternatives | Fyxer alternatives | Comparison | features, integrations/gmail | `fyxer` | 3 |
 | 14 | 2027-02-09 | meeting-request-email | meeting request email | Info / templates | features/ai-calendar-assistant | `meeting` | 3 |
 | 15 | 2027-02-16 | gmail-filters-and-labels | Gmail filters and labels | Info / how-to | integrations/gmail | `filters` | 3 |
 | 16 | 2027-02-23 | how-to-say-no-professionally | how to say no professionally in an email | Info / templates | features/ai-email-writer | `sayno` | 3 |
 | 17 | 2027-03-02 | superhuman-alternatives | Superhuman alternatives | Comparison | features, integrations/gmail | `superhuman` | 4 |
-| 18 | 2027-03-09 | how-to-keep-in-touch-with-clients | how to keep in touch with clients | Info | features/relationship-intelligence, use-cases/consultants | `keepintouch` | 4 |
+| 18 | 2027-03-09 | how-to-keep-in-touch-with-clients | how to keep in touch with clients | Info | features/relationship-intelligence, solutions/consultants | `keepintouch` | 4 |
 | 19 | 2027-03-16 | how-to-recall-an-email | how to recall an email | Info / how-to | integrations/gmail, integrations/outlook | `recall` | 4 |
 | 20 | 2027-03-23 | is-it-ok-to-use-ai-to-write-emails | is it ok to use AI to write emails | Info / opinion | features/ai-email-writer, security | `aiethics` | 4 |
-| 21 | 2027-03-30 | executive-inbox-management | executive inbox management | Info | use-cases/executives, features/ai-email-summary | `executive` | 4 |
-| 22 | 2027-04-06 | respond-to-angry-client-email | how to respond to an angry client email | Info / templates | features/ai-email-writer, use-cases/consultants | `angry` | 5 |
+| 21 | 2027-03-30 | executive-inbox-management | executive inbox management | Info | solutions/executives, features/ai-email-summary | `executive` | 4 |
+| 22 | 2027-04-06 | respond-to-angry-client-email | how to respond to an angry client email | Info / templates | features/ai-email-writer, solutions/consultants | `angry` | 5 |
 | 23 | 2027-04-13 | manage-multiple-email-accounts | how to manage multiple email accounts | Info / how-to | integrations/gmail, features/ai-email-summary | `multiple` | 5 |
-| 24 | 2027-04-20 | follow-up-email-after-demo | follow up email after demo | Info / sales | use-cases/sales, features/automated-follow-ups | `demo` | 5 |
+| 24 | 2027-04-20 | follow-up-email-after-demo | follow up email after demo | Info / sales | solutions/sales, features/email-follow-up-automation | `demo` | 5 |
 | 25 | 2027-04-27 | gemini-in-gmail-review | Gemini in Gmail | Comparison / review | integrations/gmail, features | `gemini` | 5 |
 | 26 | 2027-05-04 | professional-email-subject-lines | professional email subject lines | Info / templates | features/ai-email-writer | `subject` | 5 |
 

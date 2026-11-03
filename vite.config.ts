@@ -7,7 +7,7 @@ import { allPosts } from "./src/data/blog/index.ts";
 
 // The site's public address: canonical links, social cards, structured data and the sitemap all use it.
 // When the site moves to its own domain, set SITE_URL on the host (e.g. in Vercel's environment variables).
-const SITE_URL = (process.env.SITE_URL ?? "https://mail-pilot-nu.vercel.app").replace(/\/+$/, "");
+const SITE_URL = (process.env.SITE_URL ?? "https://mailpilot.supermia.ai").replace(/\/+$/, "");
 
 // Dev server only: which posts `npm run dev` shows. BLOG_NOW=YYYY-MM-DD shows the site as of that day;
 // BLOG_PREVIEW=1 shows every scheduled post. Production doesn't use this: middleware.js decides by the clock.

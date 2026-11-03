@@ -168,7 +168,7 @@ export const pricing: PageDef = {
       a: "Yes. Contact SuperMIA or book a demo for team and volume pricing.",
     },
   ],
-  related: ["how-it-works", "features", "use-cases/sales", "security"],
+  related: ["how-it-works", "features", "solutions/sales", "security"],
   updated: UPDATED,
 };
 

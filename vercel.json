@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "mail-pilot-nu.vercel.app" }],
+      "destination": "https://mailpilot.supermia.ai/:path*",
+      "permanent": true
+    },
+    { "source": "/use-cases/:path*", "destination": "/solutions/:path*", "permanent": true },
+    { "source": "/features/automated-follow-ups/", "destination": "/features/email-follow-up-automation/", "permanent": true },
+    { "source": "/features/automated-follow-ups", "destination": "/features/email-follow-up-automation/", "permanent": true },
+    { "source": "/features/inbox-analytics/", "destination": "/features/inbox-performance-overview/", "permanent": true },
+    { "source": "/features/inbox-analytics", "destination": "/features/inbox-performance-overview/", "permanent": true }
+  ]
+}

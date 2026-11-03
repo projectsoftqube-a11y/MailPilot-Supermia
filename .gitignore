@@ -23,7 +23,7 @@ Thumbs.db
 
 # Inner-page HTML entries: generated from src/data/pages and src/data/blog by vite.config.ts on every dev/build
 /features/
-/use-cases/
+/solutions/
 /integrations/
 /how-it-works/
 /pricing/

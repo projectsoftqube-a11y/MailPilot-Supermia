@@ -222,7 +222,7 @@ export const howToEndAnEmail: BlogPost = {
     },
     {
       t: "p",
-      text: "The same Persona writes your [follow-ups](/features/automated-follow-ups/) when nobody replies. Setup takes about 10 to 15 minutes ([how it works](/how-it-works/)), and new accounts start with free credits ([pricing](/pricing/)).",
+      text: "The same Persona writes your [follow-ups](/features/email-follow-up-automation/) when nobody replies. Setup takes about 10 to 15 minutes ([how it works](/how-it-works/)), and new accounts start with free credits ([pricing](/pricing/)).",
     },
     {
       t: "cta",
@@ -428,7 +428,7 @@ export const thankYouAfterMeeting: BlogPost = {
     },
     {
       t: "p",
-      text: "Our guide to [follow-up emails after no response](/blog/follow-up-email-after-no-response/) has the timing and seven templates. In sales, the thank-you is often the first of several touches, so it pays to have [follow-ups drafted automatically](/features/automated-follow-ups/) when a prospect goes quiet.",
+      text: "Our guide to [follow-up emails after no response](/blog/follow-up-email-after-no-response/) has the timing and seven templates. In sales, the thank-you is often the first of several touches, so it pays to have [follow-ups drafted automatically](/features/email-follow-up-automation/) when a prospect goes quiet.",
     },
     { t: "h2", id: "mistakes", text: "Common mistakes" },
     {
@@ -453,13 +453,13 @@ export const thankYouAfterMeeting: BlogPost = {
     },
     {
       t: "p",
-      text: "Sales teams use this to keep post-meeting threads from going cold: see [MailPilot for sales](/use-cases/sales/). New accounts start with free credits ([pricing](/pricing/)).",
+      text: "Sales teams use this to keep post-meeting threads from going cold: see [MailPilot for sales](/solutions/sales/). New accounts start with free credits ([pricing](/pricing/)).",
     },
     {
       t: "cta",
       title: "Don't let a good meeting go cold",
       text: "MailPilot drafts follow-ups in your voice when a contact goes quiet after a meeting. Free starter credits, no credit card.",
-      href: "/features/automated-follow-ups/",
+      href: "/features/email-follow-up-automation/",
       label: "See automated follow-ups",
     },
   ],
@@ -488,8 +488,8 @@ export const thankYouAfterMeeting: BlogPost = {
   sources: [
     { label: "Microsoft WorkLab, \"Breaking down the infinite workday\" (Work Trend Index, June 2025)", url: "https://www.microsoft.com/en-us/worklab/work-trend-index/breaking-down-infinite-workday" },
   ],
-  supports: ["features/automated-follow-ups", "use-cases/sales"],
-  related: ["follow-up-email-after-no-response", "polite-reminder-email", "cold-email-follow-up"],
+  supports: ["features/email-follow-up-automation", "solutions/sales"],
+  related: ["follow-up-email-after-no-response", "polite-reminder-email", "sales-follow-up-email"],
 };
 
 export const politeReminder: BlogPost = {
@@ -688,7 +688,7 @@ export const politeReminder: BlogPost = {
     { t: "h2", id: "mailpilot", text: "How MailPilot AI handles reminders for you" },
     {
       t: "p",
-      text: "Writing a reminder isn't the hard part. Remembering to send it is. [MailPilot AI's automated follow-ups](/features/automated-follow-ups/) watch the emails you send. If no reply arrives inside your window, MailPilot drafts a short reminder from the original thread, in your own voice, ready for you to check.",
+      text: "Writing a reminder isn't the hard part. Remembering to send it is. [MailPilot AI's automated follow-ups](/features/email-follow-up-automation/) watch the emails you send. If no reply arrives inside your window, MailPilot drafts a short reminder from the original thread, in your own voice, ready for you to check.",
     },
     {
       t: "p",
@@ -702,7 +702,7 @@ export const politeReminder: BlogPost = {
       t: "cta",
       title: "Stop keeping reminders in your head",
       text: "MailPilot drafts friendly follow-ups from the original thread when nobody replies. Free starter credits, no credit card.",
-      href: "/features/automated-follow-ups/",
+      href: "/features/email-follow-up-automation/",
       label: "See automated follow-ups",
     },
   ],
@@ -736,8 +736,8 @@ export const politeReminder: BlogPost = {
     { label: "Microsoft WorkLab, \"Breaking down the infinite workday\" (Work Trend Index, June 2025)", url: "https://www.microsoft.com/en-us/worklab/work-trend-index/breaking-down-infinite-workday" },
     { label: "Gmail Help: Schedule emails to send later", url: "https://support.google.com/mail/answer/9214606" },
   ],
-  supports: ["features/automated-follow-ups"],
-  related: ["follow-up-email-after-no-response", "thank-you-email-after-meeting", "cold-email-follow-up"],
+  supports: ["features/email-follow-up-automation"],
+  related: ["follow-up-email-after-no-response", "thank-you-email-after-meeting", "sales-follow-up-email"],
 };
 
 export const outOfOfficeExamples: BlogPost = {
@@ -957,11 +957,11 @@ export const outOfOfficeExamples: BlogPost = {
     },
     {
       t: "p",
-      text: "Before you go, decide what should keep running. In Semi-automatic mode, [follow-ups](/features/automated-follow-ups/) send on their own, so you may want to pause specific contacts or threads, or switch to Draft mode, where nothing sends without your approval. Reply drafts always wait for you either way.",
+      text: "Before you go, decide what should keep running. In Semi-automatic mode, [follow-ups](/features/email-follow-up-automation/) send on their own, so you may want to pause specific contacts or threads, or switch to Draft mode, where nothing sends without your approval. Reply drafts always wait for you either way.",
     },
     {
       t: "p",
-      text: "When you're back, the [AI morning briefing](/features/ai-email-summary/) can cover any date range, such as the whole holiday. It sorts that period into urgent alerts, deadlines and payments, action items, today's meetings and general updates, so you can see what needs you first. With several inboxes connected, it combines them and tags each item with the inbox it came from. Our guide to [managing email overload](/blog/how-to-manage-email-overload/) has a routine for the rest, and there's more for leaders on the [MailPilot for executives](/use-cases/executives/) page.",
+      text: "When you're back, the [AI morning briefing](/features/ai-email-summary/) can cover any date range, such as the whole holiday. It sorts that period into urgent alerts, deadlines and payments, action items, today's meetings and general updates, so you can see what needs you first. With several inboxes connected, it combines them and tags each item with the inbox it came from. Our guide to [managing email overload](/blog/how-to-manage-email-overload/) has a routine for the rest, and there's more for leaders on the [MailPilot for executives](/solutions/executives/) page.",
     },
     {
       t: "cta",
@@ -1199,7 +1199,7 @@ export const clientCheckIn: BlogPost = {
     },
     {
       t: "p",
-      text: "For consultants and agencies, where client relationships are the business, see [how MailPilot works for consultants](/use-cases/consultants/). New accounts start with free credits ([pricing](/pricing/)).",
+      text: "For consultants and agencies, where client relationships are the business, see [how MailPilot works for consultants](/solutions/consultants/). New accounts start with free credits ([pricing](/pricing/)).",
     },
     {
       t: "cta",
@@ -1232,7 +1232,7 @@ export const clientCheckIn: BlogPost = {
     },
   ],
   sources: [],
-  supports: ["features/relationship-intelligence", "use-cases/consultants"],
+  supports: ["features/relationship-intelligence", "solutions/consultants"],
   related: ["thank-you-email-after-meeting", "polite-reminder-email", "email-response-time"],
 };
 
@@ -1412,7 +1412,7 @@ export const catchUpAfterVacation: BlogPost = {
     },
     {
       t: "p",
-      text: "That covers much of steps 3 and 4 of the plan above in a single view. MailPilot also drafts replies in your voice as you work through threads, and every reply draft waits for your approval, so nothing goes out while you're still getting up to speed. It works with [Gmail](/integrations/gmail/), and leaders who live in their inbox can see [how it fits executives](/use-cases/executives/). New accounts start with free credits ([pricing](/pricing/)).",
+      text: "That covers much of steps 3 and 4 of the plan above in a single view. MailPilot also drafts replies in your voice as you work through threads, and every reply draft waits for your approval, so nothing goes out while you're still getting up to speed. It works with [Gmail](/integrations/gmail/), and leaders who live in their inbox can see [how it fits executives](/solutions/executives/). New accounts start with free credits ([pricing](/pricing/)).",
     },
     {
       t: "cta",

@@ -97,7 +97,7 @@ The web app is at `https://app.mailpilot.supermia.ai/` (React, Redux; backend `m
 - Image slots: `BLOG_IMAGE_PROMPTS.md` (18 images, 3:2).
 
 ### Generated files
-- The inner-page `index.html` files (`/features/`, `/use-cases/`, `/integrations/`, `/how-it-works/`, `/pricing/`, `/security/`, `/faq/`, `/sitemap/`, `/blog/`) are written by `vite.config.ts` on every dev/build and are gitignored. Never edit them; edit the data in `src/data/`.
+- The inner-page `index.html` files (`/features/`, `/solutions/`, `/integrations/`, `/how-it-works/`, `/pricing/`, `/security/`, `/faq/`, `/sitemap/`, `/blog/`) are written by `vite.config.ts` on every dev/build and are gitignored. Never edit them; edit the data in `src/data/`.
 - The 30 inner-page photos are in `src/assets/photos/pg-*.jpg` (converted from the owner's PNGs, 1600px max, JPG q82).
 - Header: Features ▾, Solutions ▾, How it works, Pricing, Blog, FAQ (Security moved to the footer and the Solutions menu card, at the owner's request).
 
@@ -113,3 +113,17 @@ The web app is at `https://app.mailpilot.supermia.ai/` (React, Redux; backend `m
 - `npm run check:blog` (also the first step of `npm run build`) enforces the post rules: answer box length, 5 takeaways, early table/checklist, mistakes section, CTA, FAQ count, 1,100+ words, 6+ internal links with 2+ to the supported page, sources for statistics, banned phrases, unique photos per post, and **no link to a post that publishes later**.
 - Comparison posts (Fyxer alternatives 2027-02-02, Superhuman alternatives 2027-03-02, Gemini in Gmail 2027-04-27) quote vendor facts checked in November 2026: re-check about a week before each date.
 - Images: 43 of the 52 scheduled-post slots reuse existing site photos (each photo used by one article only); the other 9 were generated and placed. New posts need new image slots or an unused photo; the checker blocks two posts sharing a photo.
+
+## SEO package from Drive (adopted 3 Nov 2026)
+Source: Drive folder "MailPilot AI by SuperMIA: SEO, AEO and GEO Content Package (v1)" (fact sheet, audit, keyword research, cross-domain keyword ownership, navigation spec). Where it differs from earlier work, these rules win unless the site owner says otherwise.
+- **Production domain:** `https://mailpilot.supermia.ai` (default `SITE_URL`). `vercel.json` 301s `mail-pilot-nu.vercel.app` and the renamed URLs.
+- **URLs follow the package:** `/features/email-follow-up-automation/`, `/features/inbox-performance-overview/`, `/solutions/sales|executives|consultants/`.
+- **Entity:** "MailPilot AI by SuperMIA" (several unrelated products are also called MailPilot).
+- **FAQPage markup only on `/faq/`.** Other pages and blog posts show visible FAQs without FAQPage markup.
+- **Control wording, exact everywhere:** reply drafts always wait for approval; only follow-ups can send on their own, in Semi-automatic mode.
+- **Claim rules:** no unsourced time/outcome statistics; security claims limited to the privacy policy and the CASA badge (no SOC 2, ISO, HIPAA or GDPR claims); data commitments are stated as covering Gmail (Outlook coverage unconfirmed, Q23); no accuracy guarantees, ratings, customer counts or testimonials.
+- **Never say:** HIPAA · GDPR compliant · SOC 2 · indistinguishable · 100% accurate · guaranteed · zero missed · "a third of your working day" · 3.1 hours (unsourced) · 96% match · replaces your assistant · autopilot · bulk email · cold email.
+- **Keywords owned elsewhere (never target):** ai email marketing, email marketing campaigns, ai marketing campaign generator (supermia.ai/ai-marketing-campaign/); ai workflow automation (supermia.ai); best ai agents for small business (supermia.ai blog). Also avoid: cold email software, bulk email, mail merge. MailPilot is a personal assistant, not a cold-email or sequencing tool.
+- **Open questions for SuperMIA (Q1–Q26 in the Drive fact sheet), most relevant:** CASA tier/date (Q2); stored data, scopes and AI providers (Q3); credit price (Q6); multiple inboxes (Q9); daily briefing and calendar (Q11); company credit Softqube vs Botfinity (Q14); Outlook data coverage (Q23); deletion window 30 vs 90 days (Q24).
+- **Known differences kept at the site owner's request:** no visible breadcrumbs (BreadcrumbList JSON-LD kept); header shows Blog at top level instead of a Resources dropdown; Sign in goes to `https://app.mailpilot.supermia.ai/`.
+- **Decided (owner, 3 Nov 2026): keep the Morning Briefing, calendar features and multiple-inbox claims.** The package said to wait for SuperMIA (Q9, Q11), but all three exist in the app code (`D:\All Portal\MailPilot-Frontend`). Still ask SuperMIA to confirm them before any paid marketing push.

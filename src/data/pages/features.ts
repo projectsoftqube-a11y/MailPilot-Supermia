@@ -91,7 +91,7 @@ export const featuresHub: PageDef = {
       a: "Yes. You can pause automation for any contact or thread, switch auto-drafting off per contact, and keep follow-ups in Draft mode so nothing sends without you.",
     },
   ],
-  related: ["features/ai-email-writer", "features/automated-follow-ups", "how-it-works", "pricing"],
+  related: ["features/ai-email-writer", "features/email-follow-up-automation", "how-it-works", "pricing"],
   updated: UPDATED,
 };
 
@@ -197,12 +197,12 @@ export const emailWriter: PageDef = {
       a: "Not replies. Reply drafts always wait for your approval. You can choose to let follow-ups send on their own (Semi-automatic mode), with per-contact limits.",
     },
   ],
-  related: ["features/automated-follow-ups", "features/relationship-intelligence", "integrations/gmail", "how-it-works"],
+  related: ["features/email-follow-up-automation", "features/relationship-intelligence", "integrations/gmail", "how-it-works"],
   updated: UPDATED,
 };
 
 export const followUps: PageDef = {
-  slug: "features/automated-follow-ups",
+  slug: "features/email-follow-up-automation",
   group: "feature",
   parent: "features",
   nav: { label: "Automated follow-ups", blurb: "No reply? It drafts the nudge", icon: "repeat" },
@@ -293,10 +293,10 @@ export const followUps: PageDef = {
     },
     {
       q: "Does it work for sales outreach?",
-      a: "Yes. Sales teams use it to make sure every proposal and demo gets a timely, personal nudge. It is built for real one-to-one conversations, not bulk cold email blasts.",
+      a: "Yes. Sales teams use it to make sure every proposal and demo gets a timely, personal nudge. It is built for real one-to-one conversations, not mass outreach.",
     },
   ],
-  related: ["use-cases/sales", "features/ai-email-writer", "features/relationship-intelligence", "pricing"],
+  related: ["solutions/sales", "features/ai-email-writer", "features/relationship-intelligence", "pricing"],
   updated: UPDATED,
 };
 
@@ -386,12 +386,12 @@ export const relationships: PageDef = {
       a: "Yes. Each contact can have its own instructions, such as \"keep it formal\" or \"mention the renewal date\". They override your default Persona for that person.",
     },
   ],
-  related: ["use-cases/consultants", "features/automated-follow-ups", "features/inbox-analytics", "features/ai-email-writer"],
+  related: ["solutions/consultants", "features/email-follow-up-automation", "features/inbox-performance-overview", "features/ai-email-writer"],
   updated: UPDATED,
 };
 
 export const inboxAnalytics: PageDef = {
-  slug: "features/inbox-analytics",
+  slug: "features/inbox-performance-overview",
   group: "feature",
   parent: "features",
   nav: { label: "Inbox analytics", blurb: "Response times and reply rates", icon: "chart" },
@@ -462,7 +462,7 @@ export const inboxAnalytics: PageDef = {
       a: "A conversation where the last message came from someone else and you haven't replied. The overview shows how long each one has been waiting.",
     },
   ],
-  related: ["features/relationship-intelligence", "features/ai-email-summary", "use-cases/executives", "features"],
+  related: ["features/relationship-intelligence", "features/ai-email-summary", "solutions/executives", "features"],
   updated: UPDATED,
 };
 
@@ -537,7 +537,7 @@ export const emailSummary: PageDef = {
       a: "Yes. Pick any range, for example the days you were away, and the briefing covers just that period.",
     },
   ],
-  related: ["features/ai-calendar-assistant", "use-cases/executives", "features/inbox-analytics", "features/ai-email-writer"],
+  related: ["features/ai-calendar-assistant", "solutions/executives", "features/inbox-performance-overview", "features/ai-email-writer"],
   updated: UPDATED,
 };
 
@@ -610,6 +610,6 @@ export const calendarAssistant: PageDef = {
       a: "Yes. Set your working hours and a buffer between meetings in Settings, and MailPilot takes them into account.",
     },
   ],
-  related: ["features/ai-email-summary", "use-cases/executives", "integrations/gmail", "features/ai-email-writer"],
+  related: ["features/ai-email-summary", "solutions/executives", "integrations/gmail", "features/ai-email-writer"],
   updated: UPDATED,
 };

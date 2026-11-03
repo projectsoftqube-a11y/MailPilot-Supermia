@@ -99,7 +99,7 @@ export const superhumanAlternatives: BlogPost = {
       t: "ul",
       items: [
         "**Best for:** people who want Superhuman's AI benefits but prefer to stay in Gmail or Outlook.",
-        "**Stands out:** [automated follow-ups](/features/automated-follow-ups/) drafted from the original thread, a [relationship score](/features/relationship-intelligence/) for every contact, and a [morning briefing](/features/ai-email-summary/) of urgent items, deadlines and meetings.",
+        "**Stands out:** [automated follow-ups](/features/email-follow-up-automation/) drafted from the original thread, a [relationship score](/features/relationship-intelligence/) for every contact, and a [morning briefing](/features/ai-email-summary/) of urgent items, deadlines and meetings.",
         "**Trade-off:** it doesn't replace your email app or add keyboard shortcuts. You keep Gmail's or Outlook's interface.",
         "**Price:** 200 credits a month through the SuperMIA Agent Marketplace, with free starter credits and no credit card ([pricing](/pricing/)).",
       ],
@@ -418,11 +418,11 @@ export const keepInTouchClients: BlogPost = {
     },
     {
       t: "p",
-      text: "Open a contact and you'll see their history and an AI summary of your latest thread: the core issue, what was discussed and the next action. Add notes for each contact, such as \"formal tone\" or \"always copy Jon\", and drafts follow them. When a client doesn't reply, MailPilot can draft a [follow-up](/features/automated-follow-ups/) in your voice. Reply drafts always wait for your approval.",
+      text: "Open a contact and you'll see their history and an AI summary of your latest thread: the core issue, what was discussed and the next action. Add notes for each contact, such as \"formal tone\" or \"always copy Jon\", and drafts follow them. When a client doesn't reply, MailPilot can draft a [follow-up](/features/email-follow-up-automation/) in your voice. Reply drafts always wait for your approval.",
     },
     {
       t: "p",
-      text: "Consultants and agencies use it to keep every client relationship warm without a spreadsheet ([see how it works for consultants](/use-cases/consultants/)). New accounts start with free credits ([pricing](/pricing/)).",
+      text: "Consultants and agencies use it to keep every client relationship warm without a spreadsheet ([see how it works for consultants](/solutions/consultants/)). New accounts start with free credits ([pricing](/pricing/)).",
     },
     {
       t: "cta",
@@ -455,7 +455,7 @@ export const keepInTouchClients: BlogPost = {
     },
   ],
   sources: [],
-  supports: ["features/relationship-intelligence", "use-cases/consultants"],
+  supports: ["features/relationship-intelligence", "solutions/consultants"],
   related: ["client-check-in-email", "follow-up-email-after-no-response", "thank-you-email-after-meeting"],
 };
 
@@ -931,7 +931,7 @@ export const executiveInbox: BlogPost = {
       head: ["Email type", "EA", "AI", "Executive"],
       rows: [
         ["Meeting requests", "Schedules within agreed rules", "Flags calendar conflicts", "Only for VIPs or exceptions"],
-        ["Sales pitches and cold outreach", "Declines or files", "Can sort and draft polite declines", "Never"],
+        ["Sales pitches and unsolicited outreach", "Declines or files", "Can sort and draft polite declines", "Never"],
         ["Status updates and FYIs", "Files, summarizes key points", "Summarizes threads", "Reads the summary"],
         ["Approvals and decisions", "Prepares context and a recommendation", "Drafts a reply for review", "Decides"],
         ["Board, investor, legal, HR", "Flags immediately", "Keep out of automation", "Handles personally"],
@@ -1058,13 +1058,13 @@ export const executiveInbox: BlogPost = {
     },
     {
       t: "p",
-      text: "It also keeps a profile and score for every relationship, so important contacts who've gone quiet stand out ([relationship intelligence](/features/relationship-intelligence/)). It doesn't replace an assistant's judgment; it gives the executive, and whoever helps them, a cleaner starting point each morning. See [how MailPilot works for executives](/use-cases/executives/), more on [the briefing](/features/ai-email-summary/), and [our security page](/security/).",
+      text: "It also keeps a profile and score for every relationship, so important contacts who've gone quiet stand out ([relationship intelligence](/features/relationship-intelligence/)). It doesn't replace an assistant's judgment; it gives the executive, and whoever helps them, a cleaner starting point each morning. See [how MailPilot works for executives](/solutions/executives/), more on [the briefing](/features/ai-email-summary/), and [our security page](/security/).",
     },
     {
       t: "cta",
       title: "Start each day with a briefing, not a backlog",
       text: "MailPilot sorts what's urgent, drafts replies in your voice and flags calendar clashes. Free starter credits, no credit card.",
-      href: "/use-cases/executives/",
+      href: "/solutions/executives/",
       label: "See MailPilot for executives",
     },
   ],
@@ -1095,7 +1095,7 @@ export const executiveInbox: BlogPost = {
     { label: "Gmail Help: Set up mail delegation", url: "https://support.google.com/mail/answer/138350" },
     { label: "Microsoft Support: Allow someone else to manage your mail and calendar", url: "https://support.microsoft.com/en-us/office/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926" },
   ],
-  supports: ["use-cases/executives", "features/ai-email-summary"],
+  supports: ["solutions/executives", "features/ai-email-summary"],
   related: ["how-to-manage-email-overload", "inbox-zero-method", "email-statistics-time-spent"],
 };
 

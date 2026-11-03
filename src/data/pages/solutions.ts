@@ -3,7 +3,7 @@ import type { PageDef } from "./types.ts";
 const UPDATED = "2026-11-03";
 
 export const sales: PageDef = {
-  slug: "use-cases/sales",
+  slug: "solutions/sales",
   group: "solution",
   nav: { label: "For sales teams", blurb: "SDRs, AEs, account managers", icon: "target" },
   seo: {
@@ -72,8 +72,8 @@ export const sales: PageDef = {
   ],
   faqs: [
     {
-      q: "Is MailPilot a cold email tool?",
-      a: "No. MailPilot is built for real one-to-one conversations: replying to prospects and following up on proposals, demos and open threads. It isn't designed for bulk cold email campaigns.",
+      q: "Can I use MailPilot for mass outreach?",
+      a: "No. MailPilot is built for real one-to-one conversations: replying to prospects and following up on proposals, demos and open threads. It isn't a sequencing or mass-outreach tool.",
     },
     {
       q: "Will follow-ups feel automated to prospects?",
@@ -84,12 +84,12 @@ export const sales: PageDef = {
       a: "Yes. MailPilot uses 200 credits per month per user, and team and volume pricing is available on request. Book a demo to talk it through.",
     },
   ],
-  related: ["features/automated-follow-ups", "features/relationship-intelligence", "features/ai-email-writer", "pricing"],
+  related: ["features/email-follow-up-automation", "features/relationship-intelligence", "features/ai-email-writer", "pricing"],
   updated: UPDATED,
 };
 
 export const executives: PageDef = {
-  slug: "use-cases/executives",
+  slug: "solutions/executives",
   group: "solution",
   nav: { label: "For executives & founders", blurb: "CEOs, founders, partners", icon: "briefcase" },
   seo: {
@@ -168,7 +168,7 @@ export const executives: PageDef = {
 };
 
 export const consultants: PageDef = {
-  slug: "use-cases/consultants",
+  slug: "solutions/consultants",
   group: "solution",
   nav: { label: "For consultants & agencies", blurb: "Freelancers and client services", icon: "users" },
   seo: {
@@ -237,7 +237,7 @@ export const consultants: PageDef = {
       a: "Each person connects their own inbox and Persona. Team and volume pricing is available on request.",
     },
   ],
-  related: ["features/relationship-intelligence", "features/automated-follow-ups", "features/ai-email-writer", "pricing"],
+  related: ["features/relationship-intelligence", "features/email-follow-up-automation", "features/ai-email-writer", "pricing"],
   updated: UPDATED,
 };
 
@@ -379,7 +379,7 @@ export const outlook: PageDef = {
         "Microsoft 365 Copilot helps when you ask it to. MailPilot works before you ask: the draft is waiting when you open the thread, and the follow-up is scheduled before you'd have remembered.",
         "Not sure your environment is supported? Book a demo and we'll confirm it with you before you start.",
       ],
-      points: ["Drafts waiting, not on request", "Follow-ups on autopilot", "Confirmed for your setup in a demo"],
+      points: ["Drafts waiting, not on request", "Follow-ups that run themselves, within your limits", "Confirmed for your setup in a demo"],
       photo: { name: "pg-outlook-office", fallback: "seal-hand", alt: "A corporate office corridor in late afternoon light" },
       flip: true,
     },
@@ -398,6 +398,6 @@ export const outlook: PageDef = {
       a: "MailPilot supports several connected inboxes, with an All Inboxes view for one combined briefing.",
     },
   ],
-  related: ["integrations/gmail", "security", "features/automated-follow-ups", "pricing"],
+  related: ["integrations/gmail", "security", "features/email-follow-up-automation", "pricing"],
   updated: UPDATED,
 };

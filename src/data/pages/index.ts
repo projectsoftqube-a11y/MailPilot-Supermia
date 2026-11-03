@@ -36,13 +36,13 @@ const pick = (slugs: string[]) => slugs.map((s) => bySlug.get(s)!).filter(Boolea
 export const menus = {
   features: pick([
     "features/ai-email-writer",
-    "features/automated-follow-ups",
+    "features/email-follow-up-automation",
     "features/relationship-intelligence",
-    "features/inbox-analytics",
+    "features/inbox-performance-overview",
     "features/ai-email-summary",
     "features/ai-calendar-assistant",
   ]),
-  solutions: pick(["use-cases/sales", "use-cases/executives", "use-cases/consultants"]),
+  solutions: pick(["solutions/sales", "solutions/executives", "solutions/consultants"]),
   integrations: pick(["integrations/gmail", "integrations/outlook"]),
   company: pick(["how-it-works", "pricing", "security", "faq"]),
 };
