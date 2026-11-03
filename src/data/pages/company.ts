@@ -235,7 +235,7 @@ export const security: PageDef = {
       eyebrow: "Your data, your rules",
       title: "How long we keep",
       script: "what.",
-      cols: ["What", "Retention"],
+      cols: ["Retention"],
       rows: [
         { label: "Gmail OAuth tokens", cells: ["Deleted within 24 hours of revoking access"] },
         { label: "Account data", cells: ["Deleted within 30 days of account deletion"] },

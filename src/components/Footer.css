@@ -305,6 +305,14 @@
 .foot__credit a {
   font-weight: 600;
 }
+/* bigger tap area on touch screens, same look */
+@media (pointer: coarse) {
+  .foot__bottom a {
+    display: inline-block;
+    padding-block: 8px;
+    margin-block: -8px;
+  }
+}
 .foot__strong {
   font-weight: 700;
   color: var(--paper);

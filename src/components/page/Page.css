@@ -798,6 +798,16 @@
     margin-top: -40px;
     padding-inline: 12px;
   }
+  /* on phones the card sits under the photo, not over it, so it can use the full width */
+  .pg-hero__visual,
+  .pg-hero__visual:has(.fv-rules) {
+    scale: 1;
+  }
+  /* give contact names room: a shorter score bar instead of names broken over three lines */
+  .pg-hero__visual .fv-rel li,
+  .pg-split__visual .fv-rel li {
+    grid-template-columns: auto minmax(0, 1fr) 64px;
+  }
   .pg-hero__media,
   .pg-split__media {
     padding-bottom: 0;
