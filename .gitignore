@@ -9,13 +9,17 @@ legacy-v*/
 tmp-*.png
 
 # Environment & OS
-.env
-.env.*
 *.log
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# env files: every type (.env, .env.local, .env.development, .env.production, .env.example, *.env, .envrc)
+.env
+.env.*
+*.env
+.envrc
 
 # Inner-page HTML entries: generated from src/data/pages and src/data/blog by vite.config.ts on every dev/build
 /features/
