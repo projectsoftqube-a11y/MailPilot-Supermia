@@ -2,8 +2,8 @@
 // Names inside product mock-ups (Maya, Jon, Priya…) are illustrative sample data.
 
 export const links = {
-  signup: "https://mia.supermia.ai/signup",
-  login: "https://mailpilot.supermia.ai/",
+  signup: "https://app.mailpilot.supermia.ai/",
+  login: "https://app.mailpilot.supermia.ai/",
   demo: "https://supermia.ai/schedule-demo/",
   brochure: "/brochure/mailpilot-brochure.pdf",
   product: "https://supermia.ai/ai-mailpilot/",

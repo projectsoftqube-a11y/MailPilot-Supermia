@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  ArrowLeft,
-  ArrowUpRight,
   BrainCircuit,
   ExternalLink,
   FileCheck2,
@@ -16,11 +14,9 @@ import {
   UserCheck,
 } from "lucide-react";
 import { company, legal, type HighlightIcon, type LegalDoc } from "../data/legal";
-import { links } from "../data/content";
 import { useReveals, useSmoothScroll } from "../lib/motion";
 import { Footer } from "./Footer";
-import { Logo } from "./Logo";
-import "./Nav.css";
+import { Nav } from "./Nav";
 import "./Legal.css";
 
 const ICONS: Record<HighlightIcon, typeof Lock> = {
@@ -71,17 +67,7 @@ export function Legal({ doc }: { doc: LegalDoc }) {
 
   return (
     <>
-      <header className="lg-bar">
-        <div className="lg-bar__pill">
-          <Logo href="/" />
-          <a className="lg-bar__back" href="/">
-            <ArrowLeft size={16} /> <span>Back to MailPilot</span>
-          </a>
-          <a className="nav__cta lg-bar__cta" href={links.signup}>
-            Start free <ArrowUpRight size={16} />
-          </a>
-        </div>
-      </header>
+      <Nav current={doc} />
 
       <main id="main">
         <section className="lg-hero panel-wrap">
@@ -214,7 +200,7 @@ export function Legal({ doc }: { doc: LegalDoc }) {
         </div>
       </main>
 
-      <Footer home={false} />
+      <Footer />
     </>
   );
 }

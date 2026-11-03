@@ -40,6 +40,18 @@ scripts/
   visual-check.mjs     Playwright smoke test
 ```
 
+## Inner pages (SEO / AEO / GEO)
+
+16 content pages plus an HTML sitemap, all driven by data in `src/data/pages/` and rendered by `src/components/page/Page.tsx`:
+
+- Features: `/features/`, `/features/ai-email-writer/`, `/features/automated-follow-ups/`, `/features/relationship-intelligence/`, `/features/inbox-analytics/`, `/features/ai-email-summary/`, `/features/ai-calendar-assistant/`
+- Solutions: `/use-cases/sales/`, `/use-cases/executives/`, `/use-cases/consultants/`, `/integrations/gmail/`, `/integrations/outlook/`
+- Company: `/how-it-works/`, `/pricing/`, `/security/`, `/faq/`, `/sitemap/`
+
+Add a page by adding an entry to `src/data/pages/` and registering it in `index.ts`; its HTML file, `<head>`, structured data and sitemap entry are generated. See [CLAUDE.md](CLAUDE.md) for the rules, [docs/SEO_PLAN.md](docs/SEO_PLAN.md) for the keyword map and [IMAGE_PROMPTS.md](IMAGE_PROMPTS.md) for the 30 image slots.
+
+The build also writes `sitemap.xml` (with image entries), `robots.txt` (search and AI crawlers allowed) and `llms.txt`.
+
 ## Home page sections
 
 Hero (folding letter) → The 3.1-hour day → Product player → Five folders → How it works → Who it's for → Control (approval desk) → Brochure (3D book) → FAQ → Final CTA → Footer

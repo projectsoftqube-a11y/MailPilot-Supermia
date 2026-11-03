@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Page not found | MailPilot AI</title>
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        font-family: "Inter", system-ui, sans-serif;
+        color: #f6f0e6;
+        background:
+          radial-gradient(60% 60% at 0% 0%, rgb(34 105 106 / 0.45), transparent 70%),
+          radial-gradient(50% 50% at 100% 100%, rgb(179 143 106 / 0.16), transparent 70%),
+          #0b2b2c;
+      }
+      main { max-width: 560px; text-align: center; }
+      img { height: 30px; width: auto; margin: 0 auto 40px; display: block; }
+      .stamp {
+        display: inline-grid;
+        place-items: center;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 28px;
+        border: 2px solid #dcb27e;
+        border-radius: 50%;
+        color: #dcb27e;
+        font-weight: 800;
+        font-size: 30px;
+        letter-spacing: 0.06em;
+        transform: rotate(-8deg);
+      }
+      h1 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.03em; }
+      p { margin: 0 0 28px; color: rgb(246 240 230 / 0.72); line-height: 1.6; }
+      nav { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+      a {
+        display: inline-flex;
+        align-items: center;
+        height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #071e1f;
+        background: linear-gradient(180deg, #cba57c, #b38f6a);
+      }
+      a.ghost { color: #f6f0e6; background: transparent; box-shadow: inset 0 0 0 1px rgb(246 240 230 / 0.25); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/mailpilot-logo-light.png" alt="MailPilot" width="1536" height="313" />
+      <div class="stamp">404</div>
+      <h1>This letter hasn't been delivered.</h1>
+      <p>The page you're looking for doesn't exist, or hasn't been published yet. Try the blog or head back home.</p>
+      <nav>
+        <a href="/">Back to MailPilot</a>
+        <a class="ghost" href="/blog/">Read the blog</a>
+      </nav>
+    </main>
+  </body>
+</html>

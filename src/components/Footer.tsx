@@ -1,11 +1,12 @@
 import { ArrowUp, ArrowUpRight, EyeOff, Lock, Mail, MapPin } from "lucide-react";
-import { links, nav, office, platforms } from "../data/content";
+import { links, office } from "../data/content";
+import { menus, pagePath } from "../data/pages";
 import { getLenis } from "../lib/motion";
 import { PlatformIcon } from "./ui";
 import "./Footer.css";
 
-/** `home` = rendered on the landing page; elsewhere, section links point back to it. */
-export function Footer({ home = true }: { home?: boolean }) {
+/** Shared by every page. Its link columns come from the same menus as the header. */
+export function Footer() {
   const toTop = () => {
     const lenis = getLenis();
     if (lenis) lenis.scrollTo(0, { duration: 2 });
@@ -47,41 +48,54 @@ export function Footer({ home = true }: { home?: boolean }) {
           <nav className="foot__col" aria-label="Product">
             <p>Product</p>
             <ul>
-              {nav.map((n) => (
-                <li key={n.href}>
-                  <a href={home ? n.href : `/${n.href}`}>{n.label}</a>
+              {menus.features.map((p) => (
+                <li key={p.slug}>
+                  <a href={pagePath(p.slug)}>{p.nav.label}</a>
+                </li>
+              ))}
+              <li>
+                <a href="/features/">All features</a>
+              </li>
+            </ul>
+          </nav>
+          <nav className="foot__col" aria-label="Solutions">
+            <p>Solutions</p>
+            <ul>
+              {menus.solutions.map((p) => (
+                <li key={p.slug}>
+                  <a href={pagePath(p.slug)}>{p.nav.label}</a>
+                </li>
+              ))}
+              {menus.integrations.map((p) => (
+                <li key={p.slug} className="foot__platform">
+                  <PlatformIcon name={p.slug.endsWith("gmail") ? "Gmail" : "Outlook"} size={17} />
+                  <a href={pagePath(p.slug)}>{p.nav.label}</a>
                 </li>
               ))}
             </ul>
           </nav>
-          <nav className="foot__col" aria-label="Account">
-            <p>Account</p>
+          <nav className="foot__col" aria-label="Company">
+            <p>Company</p>
             <ul>
+              {menus.company.map((p) => (
+                <li key={p.slug}>
+                  <a href={pagePath(p.slug)}>{p.nav.label}</a>
+                </li>
+              ))}
               <li>
-                <a href={links.signup}>Start free</a>
-              </li>
-              <li>
-                <a href={links.login}>Sign in</a>
+                <a href="/blog/">Blog</a>
               </li>
               <li>
                 <a href={links.demo}>Book a demo</a>
+              </li>
+              <li>
+                <a href={links.login}>Sign in</a>
               </li>
               <li>
                 <a href={links.product}>MailPilot on SuperMIA</a>
               </li>
             </ul>
           </nav>
-          <div className="foot__col">
-            <p>Works with</p>
-            <ul>
-              {platforms.map((p) => (
-                <li key={p.name} className="foot__platform">
-                  <PlatformIcon name={p.name} size={17} />
-                  {p.name}
-                </li>
-              ))}
-            </ul>
-          </div>
 
           <address className="foot__office">
             <p>Office</p>
@@ -140,6 +154,7 @@ export function Footer({ home = true }: { home?: boolean }) {
           <span className="foot__legal">
             <a href={links.privacy}>Privacy Policy</a>
             <a href={links.terms}>Terms &amp; Conditions</a>
+            <a href="/sitemap/">Sitemap</a>
             <span>
               by{" "}
               <a href={links.supermia} className="foot__strong" target="_blank" rel="noreferrer">

@@ -16,3 +16,14 @@ tmp-*.png
 Thumbs.db
 .vscode/
 .idea/
+
+# Inner-page HTML entries: generated from src/data/pages and src/data/blog by vite.config.ts on every dev/build
+/features/
+/use-cases/
+/integrations/
+/how-it-works/
+/pricing/
+/security/
+/faq/
+/sitemap/
+/blog/

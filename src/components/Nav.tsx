@@ -1,39 +1,65 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Mail } from "lucide-react";
 import { Logo } from "./Logo";
-import { links, nav, platforms } from "../data/content";
+import { links, platforms } from "../data/content";
+import { menus, pagePath, type PageDef } from "../data/pages";
 import { getLenis } from "../lib/motion";
-import { PlatformIcon } from "./ui";
+import { Icon } from "./page/icons";
+import { Photo, PlatformIcon } from "./ui";
 import "./Nav.css";
 
-export function Nav() {
+type MenuId = "features" | "solutions";
+type Item = { label: string; href: string; menu?: MenuId; match: (slug: string) => boolean };
+
+const items: Item[] = [
+  { label: "Features", href: "/features/", menu: "features", match: (s) => s === "features" || s.startsWith("features/") },
+  { label: "Solutions", href: "/use-cases/sales/", menu: "solutions", match: (s) => s.startsWith("use-cases/") || s.startsWith("integrations/") },
+  { label: "How it works", href: "/how-it-works/", match: (s) => s === "how-it-works" },
+  { label: "Pricing", href: "/pricing/", match: (s) => s === "pricing" },
+  { label: "Blog", href: "/blog/", match: (s) => s === "blog" || s.startsWith("blog/") },
+  { label: "FAQ", href: "/faq/", match: (s) => s === "faq" },
+];
+
+function MenuLink({ p, onClick }: { p: PageDef; onClick?: () => void }) {
+  return (
+    <a className="mega__link" href={pagePath(p.slug)} onClick={onClick}>
+      <span className="mega__icon">
+        <Icon name={p.nav.icon} size={18} />
+      </span>
+      <span>
+        <strong>{p.nav.label}</strong>
+        <em>{p.nav.blurb}</em>
+      </span>
+    </a>
+  );
+}
+
+/** `current` = the inner page's slug; omitted on the home page. */
+export function Nav({ current }: { current?: string }) {
   const [hidden, setHidden] = useState(false);
-  const [active, setActive] = useState(-1);
   const [open, setOpen] = useState(false);
+  const [menu, setMenu] = useState<MenuId | null>(null);
   const linksRef = useRef<HTMLElement>(null);
   const indicator = useRef<HTMLSpanElement>(null);
   const hoverPill = useRef<HTMLSpanElement>(null);
   const header = useRef<HTMLElement>(null);
+  const closeTimer = useRef(0);
+  const active = current ? items.findIndex((it) => it.match(current)) : -1;
 
-  // Hide on scroll down, show on scroll up; scrollspy for the sliding highlight.
+  // Hide on scroll down, show on scroll up; reading progress along the pill.
   useEffect(() => {
     let last = window.scrollY;
     let raf = 0;
-    const sections = nav.map((n) => document.querySelector<HTMLElement>(n.href));
     const update = () => {
       raf = 0;
       const y = window.scrollY;
-      if (y > 480 && y > last + 4) setHidden(true);
-      else if (y < last - 4 || y < 480) setHidden(false);
+      if (y > 480 && y > last + 4) {
+        setHidden(true);
+        setMenu(null);
+      } else if (y < last - 4 || y < 480) setHidden(false);
       last = y;
       const max = document.documentElement.scrollHeight - window.innerHeight;
       header.current?.style.setProperty("--p", String(max > 0 ? Math.min(1, y / max) : 0));
-      const probe = window.innerHeight * 0.4;
-      let idx = -1;
-      sections.forEach((s, i) => {
-        if (s && s.getBoundingClientRect().top < probe) idx = i;
-      });
-      setActive(idx);
     };
     const onScroll = () => {
       if (!raf) raf = requestAnimationFrame(update);
@@ -46,34 +72,57 @@ export function Nav() {
     };
   }, []);
 
-  // Slide the highlight pill under the active link.
+  // The bronze pill marks the section of the site you're in.
   useEffect(() => {
     const ind = indicator.current;
     const host = linksRef.current;
     if (!ind || !host) return;
-    const a = host.querySelectorAll<HTMLAnchorElement>("a")[active];
-    if (!a) {
-      ind.style.opacity = "0";
-      return;
-    }
-    ind.style.opacity = "1";
-    ind.style.width = `${a.offsetWidth}px`;
-    ind.style.transform = `translateX(${a.offsetLeft}px)`;
+    const place = () => {
+      const a = host.querySelectorAll<HTMLElement>(".nav__item")[active];
+      if (!a) {
+        ind.style.opacity = "0";
+        return;
+      }
+      ind.style.opacity = "1";
+      ind.style.width = `${a.offsetWidth}px`;
+      ind.style.transform = `translateX(${a.offsetLeft}px)`;
+    };
+    place();
+    document.fonts?.ready?.then(place);
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
   }, [active]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     if (open) getLenis()?.stop();
     else getLenis()?.start();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setOpen(false);
+      setMenu(null);
+    };
+    const onDown = (e: PointerEvent) => {
+      if (!header.current?.contains(e.target as Node)) setMenu(null);
+    };
+    window.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onDown);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onDown);
+    };
+  }, []);
+
   // a soft pill that glides to whichever link the mouse is on (it appears in place, then slides between links)
-  const showHover = (e: React.PointerEvent<HTMLAnchorElement>) => {
+  const showHover = (e: React.PointerEvent<HTMLElement>, id?: MenuId) => {
+    if (e.pointerType !== "mouse") return;
+    window.clearTimeout(closeTimer.current);
+    setMenu(id ?? null);
     const h = hoverPill.current;
-    if (!h || e.pointerType !== "mouse") return;
+    if (!h) return;
     const a = e.currentTarget;
     if (h.style.opacity !== "1") {
       h.style.transition = "none";
@@ -89,28 +138,52 @@ export function Nav() {
   const hideHover = () => {
     if (hoverPill.current) hoverPill.current.style.opacity = "0";
   };
+  const keepMenu = () => window.clearTimeout(closeTimer.current);
+  const leaveMenu = (e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse") return;
+    window.clearTimeout(closeTimer.current);
+    closeTimer.current = window.setTimeout(() => setMenu(null), 160);
+  };
 
   return (
-    <header className={`nav ${hidden && !open ? "is-hidden" : ""} ${open ? "is-open" : ""}`} ref={header}>
-      <div className="nav__pill">
-        <Logo className="nav__logo" />
+    <header className={`nav ${hidden && !open ? "is-hidden" : ""} ${open ? "is-open" : ""} ${menu ? "has-menu" : ""}`} ref={header}>
+      <div className="nav__pill" onPointerLeave={leaveMenu} onPointerEnter={keepMenu}>
+        <Logo className="nav__logo" href={current ? "/" : "#top"} />
         <nav className="nav__links" aria-label="Primary" ref={linksRef} onPointerLeave={hideHover}>
           <span className="nav__hover" ref={hoverPill} aria-hidden="true" />
           <span className="nav__indicator" ref={indicator} aria-hidden="true" />
-          {nav.map((item, i) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={i === active ? "is-active" : ""}
-              aria-current={i === active ? "true" : undefined}
-              onPointerEnter={showHover}
-            >
-              <span className="nav__roll">
-                <span>{item.label}</span>
-                <span aria-hidden="true">{item.label}</span>
-              </span>
-            </a>
-          ))}
+          {items.map((item, i) =>
+            item.menu ? (
+              <button
+                key={item.label}
+                type="button"
+                className={`nav__item nav__trigger ${i === active ? "is-active" : ""} ${menu === item.menu ? "is-open" : ""}`}
+                aria-expanded={menu === item.menu}
+                aria-controls={`mega-${item.menu}`}
+                onPointerEnter={(e) => showHover(e, item.menu)}
+                onClick={() => setMenu((m) => (m === item.menu ? null : item.menu!))}
+              >
+                <span className="nav__roll">
+                  <span>{item.label}</span>
+                  <span aria-hidden="true">{item.label}</span>
+                </span>
+                <ChevronDown size={14} className="nav__chev" aria-hidden="true" />
+              </button>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`nav__item ${i === active ? "is-active" : ""}`}
+                aria-current={i === active ? "page" : undefined}
+                onPointerEnter={(e) => showHover(e)}
+              >
+                <span className="nav__roll">
+                  <span>{item.label}</span>
+                  <span aria-hidden="true">{item.label}</span>
+                </span>
+              </a>
+            ),
+          )}
         </nav>
         <div className="nav__actions">
           <a className="nav__login" href={links.login}>
@@ -135,19 +208,101 @@ export function Nav() {
         <span className="nav__progress" aria-hidden="true" />
       </div>
 
+      {/* Desktop menus: they drop out from under the pill */}
+      <div className="mega-wrap" onPointerEnter={keepMenu} onPointerLeave={leaveMenu}>
+        <div id="mega-features" className={`mega ${menu === "features" ? "is-open" : ""}`} inert={menu !== "features"}>
+          <div className="mega__main">
+            <p className="mega__kicker">What MailPilot does</p>
+            <div className="mega__grid">
+              {menus.features.map((p) => (
+                <MenuLink key={p.slug} p={p} onClick={() => setMenu(null)} />
+              ))}
+            </div>
+          </div>
+          <a className="mega__promo" href="/how-it-works/">
+            <Photo name="pg-how-hero" fallbackName="seal-hand" className="mega__photo" />
+            <span className="mega__promo-copy">
+              <em>new here?</em>
+              <strong>See how MailPilot works in four steps</strong>
+              <span>
+                How it works <ArrowUpRight size={15} />
+              </span>
+            </span>
+          </a>
+          <a className="mega__all" href="/features/">
+            All features <ArrowUpRight size={15} />
+          </a>
+        </div>
+
+        <div id="mega-solutions" className={`mega mega--solutions ${menu === "solutions" ? "is-open" : ""}`} inert={menu !== "solutions"}>
+          <div className="mega__main">
+            <p className="mega__kicker">By role</p>
+            <div className="mega__grid mega__grid--one">
+              {menus.solutions.map((p) => (
+                <MenuLink key={p.slug} p={p} onClick={() => setMenu(null)} />
+              ))}
+            </div>
+          </div>
+          <div className="mega__main">
+            <p className="mega__kicker">Works with</p>
+            <div className="mega__grid mega__grid--one">
+              {menus.integrations.map((p) => (
+                <a key={p.slug} className="mega__link" href={pagePath(p.slug)} onClick={() => setMenu(null)}>
+                  <span className="mega__icon mega__icon--paper">
+                    <PlatformIcon name={p.slug.endsWith("gmail") ? "Gmail" : "Outlook"} size={20} />
+                  </span>
+                  <span>
+                    <strong>{p.nav.label}</strong>
+                    <em>{p.nav.blurb}</em>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+          <a className="mega__promo" href="/security/">
+            <Photo name="pg-security-hero" fallbackName="letter-sealed" className="mega__photo" />
+            <span className="mega__promo-copy">
+              <em>before you connect</em>
+              <strong>How we keep your inbox private</strong>
+              <span>
+                Security &amp; privacy <ArrowUpRight size={15} />
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+
       <div className="nav__sheet" id="mobile-menu" aria-hidden={!open} inert={!open}>
         <p className="nav__sheet-kicker">where to?</p>
         <ul>
-          {nav.map((item, i) => (
-            <li key={item.href} style={{ ["--i" as string]: i }}>
-              <a href={item.href} onClick={() => setOpen(false)}>
-                <span>0{i + 1}</span>
-                {item.label}
-                <ArrowUpRight size={22} className="nav__sheet-arrow" />
-              </a>
-            </li>
-          ))}
+          {[{ label: "Home", href: "/" }, ...items.filter((it) => it.menu !== "solutions")].map((item, i) => (
+              <li key={item.href} style={{ ["--i" as string]: i }}>
+                <a href={item.href} onClick={() => setOpen(false)}>
+                  <span>0{i + 1}</span>
+                  {item.label}
+                  <ArrowUpRight size={22} className="nav__sheet-arrow" />
+                </a>
+              </li>
+            ))}
         </ul>
+        <div className="nav__sheet-groups">
+          <div>
+            <p>Features</p>
+            {menus.features.map((p) => (
+              <a key={p.slug} href={pagePath(p.slug)} onClick={() => setOpen(false)}>
+                {p.nav.label}
+              </a>
+            ))}
+          </div>
+          <div>
+            <p>Solutions</p>
+            {[...menus.solutions, ...menus.integrations].map((p) => (
+              <a key={p.slug} href={pagePath(p.slug)} onClick={() => setOpen(false)}>
+                {p.nav.label}
+              </a>
+            ))}
+          </div>
+        </div>
         <div className="nav__sheet-foot">
           <div className="nav__sheet-cta">
             <a className="btn btn--bronze btn--arrow" href={links.signup}>
